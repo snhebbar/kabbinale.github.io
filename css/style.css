@@ -222,7 +222,12 @@ p{
     border-radius:50%;
 }
 
-
+#testimonials .testimonial-right img{
+    width:100px;
+    float:right;
+    margin-right:40px;
+    border-radius:50%;
+}
 
 #testimonials  h2{
     color:#fff;
@@ -236,6 +241,14 @@ p{
     border-radius:5px;
     opacity: 0.85;
 }
+
+#testimonials .testimonial-right{
+    padding:20px;
+    margin-bottom:40px;
+    border-radius:5px;
+    opacity: 0.85;
+}
+
 #contact-form .form-group{
     mairgin-bottom:20px;
 }

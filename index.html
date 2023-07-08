@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Designed by:LjoveX
          It is 100% free to use-->
     <meta charset="UTF-8">
@@ -10,71 +10,71 @@
     <meta name="keywords" content="kabbinale">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>ಕಬ್ಬಿನಾಲೆ</title>
-</head>
-<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/language.js"></script>
+    <title id="pageTitle">ಕಬ್ಬಿನಾಲೆ</title>
+  </head>
+  <body>
     <header>
-        <nav id="navbar">
+      <nav id="navbar">
         <div class="container">
-                <h1 class="logo"><a href="index.html">ಕಬ್ಬಿನಾಲೆ</a></h1>
-                <ul>
-                    <li><a class="current" href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                </ul>
-              </div>
-            </nav>  
-        
-         <div id="showcase">
-           <div class="container">
-               <div class="showcase-content">
-                   <h1><span class="text-primary">Enjoy</span> your visit</h1>
-                   <p class="lead">Lorem ipsum dolor Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum.</p>
-                   <a class="btn" href="about.html">About our Kabbinale</a>
-               </div>
-           </div>
-         </div>   
-    </header>
-	
-    <section id="home-info" class="bg-dark">
-        <div class="info-img"></div>
-        <div class="info-content">
-          <h2><span class="text-primary">History</span> of our Kabbinale</h2>
-          <p>
-              Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
-			  Lorem ipsumLorem ipsumLorem ipsum!
-          </p>
-          <a href="about.html" class="btn btn-light">Read More</a>
+          <h1 class="logo">
+            <a href="index.html" id="headerMenuKabbinaleLogo">ಕಬ್ಬಿನಾಲೆ</a>
+          </h1>
+          <ul>
+            <li>
+              <a class="current" href="index.html" id="headerMenuHome">Home</a>
+            </li>
+            <li>
+              <a href="about.html" id="headerMenuAboutUs">About Us</a>
+            </li>
+            <li>
+              <a href="contact.html" id="headerMenuContactUs">Contact Us</a>
+            </li>
+            <li>
+              <a href="testimonials.html" id="headerMenuTestimonials">Testimonials</a>
+            </li>
+            <li> Language <select id="chooseLanguage" name="chooseLanguage" class="selectpicker" data-width="fit">
+                <option data-content='
+																<span class="flag-icon flag-icon-us"></span> English'>English </option>
+                <option data-content='
+																<span class="flag-icon flag-icon-mx"></span> Kannada'>Kannada </option>
+              </select>
+            </li>
+          </ul>
         </div>
-      </section>
-	  <!--
-       <section id="features">
-           <div class="box bg-light">
-            <i class="fas fa-hotel fa-3x"></i>
-               <h3>Great Location</h3>
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p>
-           </div>
-           <div class="box bg-primary">
-            <i class="fas fa-utensils fa-3x"></i>
-            <h3>Free Meals</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p>
-           </div>
-           <div class="box bg-light">
-            <i class="fas fa-dumbbell fa-3x"></i>
-            <h3>Gym</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p>
-           </div>
-       </section>
+      </nav>
+      <div id="showcase">
+        <div class="container">
+          <div class="showcase-content">
+            <h1 id="bannerEnjoyHeaderLineSpanNText">
+              <span class="text-primary">Enjoy</span> your visit
+            </h1>
+            <p class="lead" id="bannerEnjoyParagraphText">Lorem ipsum dolor Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum.</p>
+            <a class="btn" href="about.html" id="bannerEnjoyAboutUsText">About our Kabbinale</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="home-info" class="bg-dark">
+      <div class="info-img"></div>
+      <div class="info-content">
+        <h2 id="sectionHistoryOfKabbinaleLineSpanNText">
+          <span class="text-primary">History</span> of our Kabbinale
+        </h2>
+        <p id="sectionHistoryOfKabbinaleParagraphText"> Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsumLorem ipsumLorem ipsum! </p>
+        <a href="about.html" class="btn btn-light" id="sectionHistoryOfKabbinaleReadMoreText">Read More</a>
+      </div>
+    </section>
+    <!--
+       <section id="features"><div class="box bg-light"><i class="fas fa-hotel fa-3x"></i><h3>Great Location</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p></div><div class="box bg-primary"><i class="fas fa-utensils fa-3x"></i><h3>Free Meals</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p></div><div class="box bg-light"><i class="fas fa-dumbbell fa-3x"></i><h3>Gym</h3><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, officiis.</p></div></section>
 	   -->
-       <footer id="main-footer"> 
-
-
-      <div class="container">
-      <p>&copy; 2023 Maanya Technologies. All rights reserved.</p>
-    </div>
-    
-	
-       </footer>
-</body>
+    <footer id="main-footer">
+      <>
+        <input type="hidden" id="currentPage" name="currentPage" value="home">
+        <div class="container">
+          <p>&copy; 2023 Maanya Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+  </body>
 </html>
