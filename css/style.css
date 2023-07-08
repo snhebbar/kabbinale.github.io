@@ -109,6 +109,10 @@ p{
  float:left;
 }
 
+#navbar ul li select{
+ float:right;
+}
+
 #navbar ul li a{
     display:block;
     padding:20px;
