@@ -32,7 +32,7 @@ p{
 }
 
 .text-primary{
-    color:#f7c08a;
+    color:#FF8B00;
 }
 
 .lead{
@@ -88,7 +88,8 @@ p{
 #navbar{
     background:#333;
     color:#fff;
-    overflow:auto;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
 }
 
 #navbar a{
@@ -131,6 +132,7 @@ p{
     background-image: url('../img/showcase.jpg'); no-repeat 
     center center/cover;
     height: 1050px;
+
     
 }
 
@@ -184,6 +186,12 @@ p{
 
 .box i{
     margin-bottom:10px;
+}
+
+.boximage001{
+    height:125px;
+	width:125px;
+    background:url('../img/test-bg.jpg') no-repeat center center/cover;
 }
 
 /* About Info */
@@ -280,3 +288,104 @@ footer {
     background:#333;
 	align: center;
     }
+
+
+
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+
+
+ul {
+  background: darkorange;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  color: #fff;
+  background: darkorange;
+  display: block;
+  float: left;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover,
+li:focus-within {
+  background: red;
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+  background: orange;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.float-container {
+   
+	height:96px;
+}
+
+.float-child-logo {
+    width: 10%;
+    float: left;
+	padding-left: 100px;
+}
+
+.float-child-menu-left {
+    width: 60%;
+    float: left;
+}
+
+.float-child-menu-right {
+    width: 15%;
+    float: right;
+}
