@@ -119,12 +119,25 @@ p{
     padding:20px;
     text-align: center;
 }
-
+/*
 #navbar ul li a:hover,
  #navbar ul li a.current{
     background:#857CF7;
     color:#F5E200;
 }
+*/
+#navbar ul li a:hover,
+ #navbar ul li a.current {
+  /* color: #F5E200; */
+ 
+    background-image: linear-gradient(to bottom, #857CF7, #857CF7), linear-gradient(to bottom, transparent, transparent);
+    /* background-position: 0 100%, 0 100%; */
+	background-position: 0 80%, 0 0%;
+    background-repeat: no-repeat;
+    /*background-size: 100% 2px, 100% 1px;*/
+	background-size: 90% 5px, 0% 0px
+}
+
 
 /* showcase */
 
