@@ -37,7 +37,8 @@ $(document).ready(function() {
 					headerMenuHome: "ಮುಖಪುಟ",
 					headerMenuAboutUs: "ನಮ್ಮ ಬಗ್ಗೆ",
 					headerMenuContactUs: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
-					headerMenuTestimonials: "ಪ್ರಶಂಸಾಪತ್ರಗಳು",
+					//headerMenuTestimonials: "ಪ್ರಶಂಸಾಪತ್ರಗಳು",
+					headerMenuTestimonials: "ಕಾರ್ಯಕ್ರಮಗಳು",
 
 
 					bannerEnjoyHeaderLineSpanNText: '<span class="text-primary" >Enjoy</span> your visit',
@@ -124,7 +125,8 @@ $(document).ready(function() {
 					headerMenuHome: "Home",
 					headerMenuAboutUs: "About Us",
 					headerMenuContactUs: "Contact Us",
-					headerMenuTestimonials: "Testimonials",
+					//headerMenuTestimonials: "Testimonials",
+					headerMenuTestimonials: "Events",
 
 
 					bannerEnjoyHeaderLineSpanNText: '<span class="text-primary" >Enjoy</span> your visit',
