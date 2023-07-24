@@ -237,6 +237,9 @@ $(document).ready(function() {
 		$("#headerMenuAboutUs").html(languageJSON.headerMenuAboutUs);
 		$("#headerMenuContactUs").html(languageJSON.headerMenuContactUs);
 		$("#headerMenuTestimonials").html(languageJSON.headerMenuTestimonials);
+		$("#headerMenuSponsers").html(languageJSON.headerMenuSponsers);
+
+		
 
 
 	}
