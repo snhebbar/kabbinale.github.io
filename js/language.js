@@ -39,6 +39,7 @@ $(document).ready(function() {
 					headerMenuContactUs: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ",
 					//headerMenuTestimonials: "ಪ್ರಶಂಸಾಪತ್ರಗಳು",
 					headerMenuTestimonials: "ಕಾರ್ಯಕ್ರಮಗಳು",
+					headerMenuSponsers:"ಪ್ರಾಯೋಜಕರು",
 
 
 					bannerEnjoyHeaderLineSpanNText: '<span class="text-primary" >Enjoy</span> your visit',
@@ -127,6 +128,7 @@ $(document).ready(function() {
 					headerMenuContactUs: "Contact Us",
 					//headerMenuTestimonials: "Testimonials",
 					headerMenuTestimonials: "Events",
+					headerMenuSponsers:"Sponsers",
 
 
 					bannerEnjoyHeaderLineSpanNText: '<span class="text-primary" >Enjoy</span> your visit',
