@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPVNV2SQMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RPVNV2SQMD'); 
+	</script>
+	    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabbinale  | Pure Nature & Divine Heritage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* REQUIRMENTS#290526P1242.V1.R1 - Nature Scent Palette */
+        :root {
+            --forest-deep: #132a13;
+            --leaf-vibrant: #31572c;
+            --moss-light: #4f772d;
+            --earth-bark: #5c4033;
+            --mist-cream: #f4f7f4;
+            --wood-dark: #2b1d15;
+            --gold-luxury: #d4af37;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--mist-cream);
+            color: #212529;
+            overflow-x: hidden;
+        }
+
+        /* REQUIRMENTS#290526P1242.V1.R2 & R10 - Layout Constraints */
+        .navbar-custom {
+            background-color: var(--forest-deep);
+            border-bottom: 3px solid var(--moss-light);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-custom .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff !important;
+        }
+
+        .navbar-custom .nav-link {
+            color: #e0e9e0 !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .navbar-custom .nav-link:hover, 
+        .navbar-custom .nav-link.active {
+            background-color: var(--leaf-vibrant);
+            color: #ffffff !important;
+        }
+
+        /* REQUIRMENTS#290526P1242.V1.R4 - Running Banner & Hover Explanations */
+        .announcement-ticker {
+            background-color: var(--earth-bark);
+            color: #f4f7f4;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ticker-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .ticker-wrap {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker-move 35s linear infinite;
+        }
+
+        @keyframes ticker-move {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        .ticker-wrap:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+        }
+
+        .hero-slider-frame {
+            position: relative;
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .hero-slider-frame .carousel-item img {
+            height: 550px;
+            object-fit: cover;
+            width: 100%;
+            filter: brightness(75%);
+            transition: transform 0.5s ease;
+        }
+
+        /* Dynamic Mouse Hover Explanation Overlay */
+        .hover-explanation-panel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(19,42,19,0.95) 0%, rgba(19,42,19,0.85) 75%, rgba(19,42,19,0) 100%);
+            color: #ffffff;
+            padding: 50px 30px 30px 30px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 10;
+        }
+
+        .hero-slider-frame:hover .hover-explanation-panel {
+            transform: translateY(0);
+        }
+
+        /* Sub-tab Styling for REQUIRMENTS#290526P1242.V1.R5 & R6 */
+        .subtab-navigation .nav-link {
+            background-color: #ffffff;
+            color: var(--forest-deep);
+            border: 1px solid #dee2e6;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .subtab-navigation .nav-link.active {
+            background-color: var(--moss-light) !important;
+            color: #fff !important;
+            border-color: var(--moss-light);
+        }
+
+        .temple-mini-slider img {
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Core Section Management */
+        .app-view-section {
+            display: none;
+            padding: 60px 0;
+            animation: fadeInView 0.4s ease-in-out forwards;
+        }
+		
+		
+		
+
+
+        .app-view-section.view-active {
+            display: block;
+        }
+
+        @keyframes fadeInView {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards and Structural UI Elements */
+        .nature-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(49,87,44,0.12);
+        }
+
+        /* REQUIRMENTS#290526P1242.V2.R1 - Custom News Card Structural Layout overrides */
+        .news-thumb-frame {
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            position: relative;
+        }
+        
+        .news-thumb-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .nature-card:hover .news-thumb-frame img {
+            transform: scale(1.06);
+        }
+
+        .news-category-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--forest-deep);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--moss-light);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* VERSION#290526P1242.V3 MODS - REQUIRMENTS#290526P1242.V3.R2 */
+        .sponsor-premium-row {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 240px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none !important;
+            display: block;
+        }
+
+        .sponsor-premium-row:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(19,42,19,0.25);
+        }
+
+        .sponsor-row-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(19,42,19,0.95) 0%, rgba(19,42,19,0.75) 50%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+            padding: 2.5rem;
+        }
+
+        .sponsor-forehead-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            height: 100%;
+        }
+
+        .sponsor-avatar-frame {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 3px solid var(--gold-luxury);
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .sponsor-avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .qr-mock-box {
+            background: #ffffff;
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            padding: 8px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* REQUIRMENTS#290526P1242.V1.R10 - Footer Framework */
+        footer {
+            background-color: var(--wood-dark);
+            color: #dcd1c4;
+            padding: 50px 0 25px 0;
+            border-top: 5px solid var(--earth-bark);
+        }
+
+        footer h5 {
+            color: #ffffff;
+            margin-bottom: 1.2rem;
+        }
+
+        footer a {
+            color: #a3b19b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .lang-node-selector {
+            border: 1px solid var(--moss-light);
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            padding: 4px 8px;
+            outline: none;
+            cursor: pointer;
+        }
+        .lang-node-selector option {
+            color: black;
+        }
+		
+		
+        /* VERSION#290526P1242.V4 CUSTOM STYLES */
+        .gallery-sliding-frame img {
+            height: 400px;
+            object-fit: cover;
+            width: 100%;
+            filter: brightness(85%);
+        }
+        .wellwisher-sliding-frame img {
+            height: 350px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .limelight-thumb {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="announcement-ticker">
+        <div class="ticker-container">
+            <div class="ticker-wrap" id="global-ticker-text">
+				<span style="font-family:verdana; color:red; font-weight: bold; "> IMPORTANT NOTE: Kabbinale.com administration or portal is not responsible for any misuse or misrepresentation of the information displayed here. The team collects information from various sources and shares it on this portal for educational and entertainment purposes only. 
+If you have any objections or concerns regarding any content, please contact the administration team immediately and share your concerns. Necessary action will be taken as soon as possible.</span>
+ Welcome to Kabbinale Eco-Portal! Experience the pure untouched nature, pristine evergreen deep forests, historic divine shrines, and cultural legacy of the western ghats foothills.
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" data-target-view="home">
+                <i class="fa-solid fa-mountain-sun text-warning me-2 fs-3"></i>
+                <div>
+                    <span class="d-block lh-1">KABBINALE</span>
+                    <small style="font-size: 0.65rem; color: #a3b19b;" id="brand-subtext">Vibrant Nature Eco-Portal</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kabbinaleNavbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="kabbinaleNavbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="primary-menu-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-target-view="home" id="m-home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target-view="about" id="m-about">Temples</a></li>
+                    
+					<li class="nav-item"><a class="nav-link" href="#" data-target-view="events" id="m-events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-target-view="news" id="m-news">News</a></li>
+					
+					<li class="nav-item"><a class="nav-link" href="#" data-target-view="limelight" id="m-limelight">Limelight</a></li>
+                     
+					<li class="nav-item"><a class="nav-link" href="#" data-target-view="community" id="m-community">Community</a></li>
+					
+                    <li class="nav-item"><a class="nav-link" href="#" data-target-view="wellwishers" id="m-wellwishers">Well-Wishers</a></li>
+					
+					
+                    <li class="nav-item"><a class="nav-link" href="#" data-target-view="gallery" id="m-gallery">Gallery</a>
+					</li>
+					
+                    <li class="nav-item"><a class="nav-link" href="#" data-target-view="contact" id="m-contact">Contact Us</a></li>
+					
+					<li class="nav-item"><a class="nav-link" href="#" data-target-view="sponsors" id="m-sponsors">Sponsors</a></li>
+					
+					
+                </ul>
+                
+                <div class="ms-3 d-flex align-items-center">
+                    <i class="fa-solid fa-language text-white-50 me-1"></i>
+                    <select class="lang-node-selector" id="localization-trigger-node">
+                        <option value="English">English</option>
+                        <option value="Kannada">ಕನ್ನಡ</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+<section id="view-home" class="app-view-section view-active pt-0">
+			<div class="container-fluid px-0">
+				<div class="hero-slider-frame" id="home-interactive-slider">
+                    <div id="homeCarouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-slide-index="0">
+                                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80" alt="Landscape Landscape Grid">
+                            </div>
+                            <div class="carousel-item" data-slide-index="1">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80" alt="Forest Deep Canopy">
+                            </div>
+                            <div class="carousel-item" data-slide-index="2">
+                                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1600&q=80" alt="Therapeutic Plant Environments">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+
+                    <div class="hover-explanation-panel" id="slider-hover-panel">
+                        <h3 class="fw-bold text-warning" id="slider-panel-title">Kabbinale Landscape View</h3>
+                        <p class="mb-0" id="slider-panel-text">A mesmerizing view of wild evergreen valleys surrounding the village.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row g-4 text-center mb-5">
+                    <div class="col-md-4">
+                        <div class="p-4 nature-card border-top border-4 border-success">
+                            <i class="fa-solid fa-house-chimney text-success fs-1 mb-3"></i>
+                            <h3 class="fw-bold">800+</h3>
+                            <p class="text-muted fw-semibold mb-0" id="lbl-stat-houses">Total Residential Houses</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 nature-card border-top border-4 border-success">
+                            <i class="fa-solid fa-users text-success fs-1 mb-3"></i>
+                            <h3 class="fw-bold">2000+</h3>
+                            <p class="text-muted fw-semibold mb-0" id="lbl-stat-population">Active Residents Community</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 nature-card border-top border-4 border-success">
+                            <i class="fa-solid fa-seedling text-success fs-1 mb-3"></i>
+                            <h3 class="fw-bold">100%</h3>
+                            <p class="text-muted fw-semibold mb-0" id="lbl-stat-nature">Ayurvedic Biodiversity Flora</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center bg-white rounded shadow-sm p-4 mx-1">
+                    <div class="col-lg-6">
+                        <h2 class="text-success fw-bold mb-3" id="lbl-welcome-title">The Natural Splendor of Kabbinale</h2>
+                        <p class="text-secondary mb-3" id="lbl-welcome-p1" style="line-height: 1.8;">
+                            Kabbinale is a unique settlement wrapped perfectly within wild mountain ranges and expansive evergreen woods. The pristine atmosphere is enriched by dense canopies, teeming wildlife habitats, and a diverse range of indigenous avian species.
+                        </p>
+                        <p class="text-secondary mb-0" id="lbl-welcome-p2" style="line-height: 1.8;">
+                            The ecosystem serves as a vast natural repository of organic forest fruits and potent medicinal herbs, safeguarding age-old Ayurvedic botanical secrets passed down through generations.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="row g-2">
+                            <div class="col-6"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Wildlife and Birds"></div>
+                            <div class="col-6"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Mountain mist views"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-about" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6" id="lbl-about-header">Divine Temples & Daivasthanas</h2>
+                <p class="text-muted" id="lbl-about-subheader">Explore the historic spiritual entities that protect and guide the village landscape.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="nav flex-column nav-pills subtab-navigation p-2 bg-white rounded shadow-sm" id="temple-sub-navigation" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pane-t1" type="button"><i class="fa-solid fa-gopuram me-2"></i>Uma Maheshwara Vittalagundi</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t2" type="button"><i class="fa-solid fa-gopuram me-2"></i>Lakshminarayana Melumata</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t3" type="button"><i class="fa-solid fa-gopuram me-2"></i>Venugopala Krishna Kelamata</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t4" type="button"><i class="fa-solid fa-gopuram me-2"></i>Kodamanitthaya Daivasthana</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t5" type="button"><i class="fa-solid fa-gopuram me-2"></i>Sathya Devathe Kelamata</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t6" type="button"><i class="fa-solid fa-gopuram me-2"></i>Kaalaraahvu Kshetra</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="tab-content bg-white p-4 rounded shadow-sm border" id="temple-panes-context">
+                        
+                        <div class="tab-pane fade show active" id="pane-t1">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t1">Uma Maheshwara Vittalagundi</h3>
+                            <div id="slider-t1" class="carousel slide temple-mini-slider mb-3" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1609137144813-2d17c918ee91?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Temple Frame A"></div>
+                                    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Temple Frame B"></div>
+                                </div>
+                            </div>
+                            <p class="text-secondary" id="t-desc-t1" style="line-height:1.7;">Situated in the scenic valley of Vittalagundi, this historic temple dedicated to Lord Shiva and Goddess Uma stands as a major center of meditation, prayer, and community connection.</p>
+							
+						<div class="row align-items-center">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-sm w-100" style="height:250px; object-fit:cover;" alt="Temple Frame B">
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="text-secondary mb-0" style="line-height:1.7;">Situated in the scenic valley of Vittalagundi, this historic temple dedicated to Lord Shiva and Goddess Uma stands as a major center of meditation, prayer, and community connection.</p>
+                                </div>
+								
+						<div class="col-md-5 mb-3 mb-md-0">
+                                   
+                                    <p class="text-secondary mb-0" style="line-height:1.7;">Situated in the scenic valley of Vittalagundi, this historic temple dedicated to Lord Shiva and Goddess Uma stands as a major center of meditation, prayer, and community connection.</p>
+                                </div>
+                                <div class="col-md-7">
+								 <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-sm w-100" style="height:250px; object-fit:cover;" alt="Temple Frame B">
+                                </div>
+								
+								
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pane-t2">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t2">Lakshminarayana Melumata</h3>
+                            <div id="slider-t2" class="carousel slide temple-mini-slider mb-3" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Temple Frame C"></div>
+                                </div>
+                            </div>
+                            <p class="text-secondary" id="t-desc-t2" style="line-height:1.7;">Located on the elevated ridges of Melumata, this temple honors Lord Lakshminarayana. It preserves centuries-old traditional rituals and hosts grand community assemblies during seasonal festivals.</p>
+                        </div>
+
+                        <div class="tab-pane fade" id="pane-t3">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t3">Venugopala Krishna Kelamata</h3>
+                            <div id="slider-t3" class="carousel slide temple-mini-slider mb-3" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1561361531-997c5d23db16?auto=format&fit=crop&w=800&q=80" class="d-block w-100" alt="Temple Frame D"></div>
+                                </div>
+                            </div>
+                            <p class="text-secondary" id="t-desc-t3" style="line-height:1.7;">The serene Kelamata sanctuary houses the divine shrine of Lord Venugopala Krishna, filling the atmosphere with peaceful devotional music and continuous spiritual energy.</p>
+                        </div>
+
+                        <div class="tab-pane fade" id="pane-t4">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t4">Kodamanitthaya Daivasthana Melumata</h3>
+                            <p class="text-secondary" id="t-desc-t4" style="line-height:1.7;">An ancient shrine dedicated to the protective deity Kodamanitthaya on the Melumata ridge. It serves as a spiritual anchor for the village's historic lineage and seasonal cultural rituals.</p>
+                        </div>
+
+                        <div class="tab-pane fade" id="pane-t5">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t5">Sathya Devathe Kelamata</h3>
+                            <p class="text-secondary" id="t-desc-t5" style="line-height:1.7;">A sacred space in Kelamata dedicated to the worship of Sathya Devathe, symbolizing truth and justice. The shrine plays an integral role in the cultural lifecycle of Kabbinale's families.</p>
+                        </div>
+
+                        <div class="tab-pane fade" id="pane-t6">
+                            <h3 class="fw-bold text-success mb-3" id="t-title-t6">Kaalaraahvu Kshetra</h3>
+                            <p class="text-secondary" id="t-desc-t6" style="line-height:1.7;">The sacred grove dedicated to Kaalaraahvu, preserving the historical practices of nature-aligned worship within the dense forests of Kabbinale.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-events" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6" id="lbl-events-header">Community Festive Gatherings</h2>
+                <p class="text-muted" id="lbl-events-subheader">Stay updated on festivals and dynamic events across the temples and cultural institutions of Kabbinale.</p>
+            </div>
+
+            <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+                <button class="btn btn-success filter-node-action active-filter" data-filter-scope="all" id="btn-f-all">Collective Events View</button>
+                <button class="btn btn-outline-success filter-node-action" data-filter-scope="t1">Uma Maheshwara</button>
+                <button class="btn btn-outline-success filter-node-action" data-filter-scope="t2">Lakshminarayana</button>
+                <button class="btn btn-outline-success filter-node-action" data-filter-scope="t3">Venugopala Krishna</button>
+                <button class="btn btn-outline-success filter-node-action" data-filter-scope="village">Village General</button>
+            </div>
+
+            <div class="row g-4" id="events-grid-engine">
+			
+			 <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t1">
+                    <div class="card h-100 nature-card border-start border-success border-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">ಕೆ ಸೀತಾರಾಮ ಹೆಬ್ಬಾರ್</span>
+                                <small class="text-muted fw-bold">ಬಾಯರಬೆಟ್ಟು</small>
+                            </div>
+                            <h5 class="fw-bold card-title card-evt-title-1">ಪ್ರದೋಷ ಆರಾಧನೆ</h5>
+                            <p class="text-secondary card-text small card-evt-desc-1">ಆತ್ಮೀಯ ಸಮಾಜ ಬಾಂಧವರೇ🙏 ನಮ್ಮ ಸಂಘದ ವತಿಯಿಂದ ನಡೆಯುವ ಪ್ರದೋಷ ಆರಾಧನೆ ಕಾರ್ಯಕ್ರಮ  28/05/2026ನೆ ಗುರುವಾರ ಸಂಜೆ 6 ಗಂಟೆಗೆ ಸರಿಯಾಗಿ ನಮ್ಮ ಸಂಘದ ಗೌರವಾಧ್ಯಕ್ಷರಾದ ಬಾಯರಬೆಟ್ಟು ಕೆ ಸೀತಾರಾಮ ಹೆಬ್ಬಾರ್ ಇವರ ಮನೆಯಲ್ಲಿ ನಡೆಯಲಿದೆ. ಎಲ್ಲರೂ ಹೆಚ್ಚಿನ ಸಂಖ್ಯೆಯಲ್ಲಿ ಭಾಗವಹಿಸಿ ಕಾರ್ಯಕ್ರಮವನ್ನು ಯಶಸ್ವಿಗೊಳಿಸಬೇಕಾಗಿ ವಿನಂತಿ🙏.</p>
+                            <hr class="text-muted">
+                            <span class="text-success small fw-bold"><i class="fa-regular fa-clock me-1"></i><span class="card-evt-time-1">ಪ್ರದೋಷ ಆರಾಧನೆ ಕಾರ್ಯಕ್ರಮ  28/05/2026ನೆ ಗುರುವಾರ ಸಂಜೆ 6 ಗಂಟೆಗೆ</span></span>
+                        </div>
+                    </div>
+                </div>
+				
+				
+                <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t1">
+                    <div class="card h-100 nature-card border-start border-success border-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-success">Uma Maheshwara</span>
+                                <small class="text-muted fw-bold">Vittalagundi</small>
+                            </div>
+                            <h5 class="fw-bold card-title card-evt-title-1">Maha Rathotsava (Chariot Fest)</h5>
+                            <p class="text-secondary card-text small card-evt-desc-1">Experience the grand annual festival featuring elaborate temple chariot processions, traditional music performances, and community banquets.</p>
+                            <hr class="text-muted">
+                            <span class="text-success small fw-bold"><i class="fa-regular fa-clock me-1"></i><span class="card-evt-time-1">Phalguna Masa (Annual Calendar)</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t2">
+                    <div class="card h-100 nature-card border-start border-primary border-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">Lakshminarayana</span>
+                                <small class="text-muted fw-bold">Melumata</small>
+                            </div>
+                            <h5 class="fw-bold card-title card-evt-title-2">Shravana Deepotsava</h5>
+                            <p class="text-secondary card-text small card-evt-desc-2">A spectacular evening celebration where thousands of traditional clay oil lamps are lit across the Melumata ridges, casting a beautiful glow over the valley.</p>
+                            <hr class="text-muted">
+                            <span class="text-primary small fw-bold"><i class="fa-regular fa-clock me-1"></i><span class="card-evt-time-2">Shravana Month (Monsoon Dusk)</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t3">
+                    <div class="card h-100 nature-card border-start border-warning border-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-warning text-dark">Venugopala Krishna</span>
+                                <small class="text-muted fw-bold">Kelamata</small>
+                            </div>
+                            <h5 class="fw-bold card-title card-evt-title-3" style="color: #2b1d15;">Sri Krishna Janmashtami</h5>
+                            <p class="text-secondary card-text small card-evt-desc-3">Devotional singing marathons, classical flute recitals, and traditional clay-pot breaking events (Mosaru Kudike) organized by the village youth.</p>
+                            <hr class="text-muted">
+                            <span class="text-dark small fw-bold"><i class="fa-regular fa-clock me-1"></i><span class="card-evt-time-3">Bhadrapada Celebration</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="village">
+                    <div class="card h-100 nature-card border-start border-danger border-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-danger">Village General</span>
+                                <small class="text-muted fw-bold">Community Wide</small>
+                            </div>
+                            <h5 class="fw-bold card-title card-evt-title-4">Ayurvedic Botany & Seed Exchange</h5>
+                            <p class="text-secondary card-text small card-evt-desc-4">An annual gathering centered around local ecology, where elder residents share and distribute rare forest fruits and medicinal plant saplings.</p>
+                            <hr class="text-muted">
+                            <span class="text-danger small fw-bold"><i class="fa-regular fa-clock me-1"></i><span class="card-evt-time-4">Pre-Monsoon Season</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-news" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6" id="lbl-news-header">Kabbinale Journal & Live Chronicles</h2>
+                <p class="text-muted" id="lbl-news-subheader">Stay localized with brief insights, institutional announcements, and recent analytical journals directly from the village ecosystem.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center" id="news-cards-injector-deck"></div>
+        </section>
+
+        <div class="modal fade" id="newsReaderPopupWindow" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(4px);">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 14px; overflow:hidden;">
+                    <div class="position-relative">
+                        <img id="popup-large-image" src="" alt="News Detailed View" class="w-100" style="height: 380px; object-fit: cover;">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle" data-bs-dismiss="modal" aria-label="Close" style="box-shadow: 0 2px 10px rgba(0,0,0,0.3);"></button>
+                    </div>
+                    <div class="modal-body p-4 bg-white">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge bg-success" id="popup-category-label">Category</span>
+                            <small class="text-muted" id="popup-publish-date"><i class="fa-regular fa-calendar me-1"></i> Date</small>
+                        </div>
+                        <h4 class="fw-bold text-dark border-bottom pb-3 mb-3" id="popup-brief-desc" style="line-height: 1.5;"></h4>
+                        <div class="text-secondary" id="popup-detailed-desc" style="line-height: 1.8; font-size: 1.05rem; text-align: justify;"></div>
+                    </div>
+                    <div class="modal-footer bg-light border-top d-flex justify-content-end p-3">
+                        <button type="button" class="btn btn-secondary px-4 fw-semibold" data-bs-dismiss="modal" id="popup-close-trigger-btn">Close Reader</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+        <section id="view-limelight" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6">Village Limelight</h2>
+                <p class="text-muted">Celebrating exceptional tourist locations, individual breakthroughs, and outstanding heritage achievements.</p>
+            </div>
+            <div class="row g-4" id="limelight-grid-engine">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 nature-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" class="limelight-thumb" alt="Thumb">
+                            <span class="news-category-badge">Tourist Spots</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-bold text-success">Vittalagundi Cascade Hidden Falls</h5>
+                            <p class="text-muted small mb-2"><strong>Belongs to:</strong> Village Nature Reserve | <strong>Published:</strong> 2026-05-20</p>
+                            <p class="text-secondary small flex-grow-1">A breathtaking wilderness water stream nestled perfectly within ancient rocks near the foothill parameters.</p>
+                            <a href="#" class="text-success fw-bold text-decoration-none small btn-limelight-popup" data-index="0">Show more <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 nature-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" class="limelight-thumb" alt="Thumb">
+                            <span class="news-category-badge">Person Achievements</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-bold text-success">Shri K. Ramachandra Bhat Award</h5>
+                            <p class="text-muted small mb-2"><strong>Belongs to:</strong> Kelamata Academy | <strong>Published:</strong> 2026-05-15</p>
+                            <p class="text-secondary small flex-grow-1">Honored for an outstanding lifetime contribution protecting native Ayurvedic organic documentation logs across decades.</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal fade" id="limelightDetailedPopupWindow" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(4px);">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 14px; overflow:hidden;">
+                    <div class="position-relative">
+                        <img id="limelight-popup-large-image" src="" alt="Limelight Large View" class="w-100" style="height: 380px; object-fit: cover;">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4 bg-white">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge bg-success" id="limelight-popup-category">Category</span>
+                            <small class="text-muted" id="limelight-popup-date"></small>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-3" id="limelight-popup-brief" style="line-height: 1.5;"></h5>
+                        <div class="text-secondary" id="limelight-popup-detailed" style="line-height: 1.8; text-align: justify;"></div>
+                    </div>
+                    <div class="modal-footer bg-light border-top p-3">
+                        <button type="button" class="btn btn-secondary px-4 fw-semibold" data-bs-dismiss="modal">Close Window</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="view-community" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6">Community Hub</h2>
+                <p class="text-muted">Exploring cultural heritage, native lifestyles, and community development priorities.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="nav flex-column nav-pills subtab-navigation p-2 bg-white rounded shadow-sm" id="community-sub-navigation" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pane-comm1" type="button"><i class="fa-solid fa-users-viewfinder me-2"></i>Mooladhara Tribe Legacy</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-comm2" type="button"><i class="fa-solid fa-wheat-awn me-2"></i>Malenadu Farmers Collective</button>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="tab-content bg-white p-4 rounded shadow-sm border" id="community-panes-context">
+                        <div class="tab-pane fade show active" id="pane-comm1">
+                            <h4 class="fw-bold text-success mb-3">Mooladhara Tribe Heritage</h4>
+                            <div class="d-flex flex-column gap-4">
+                                <div class="border-bottom pb-3">
+                                    <p class="fw-bold text-dark mb-1">Traditional Bamboo Art and Eco-Craft preservation styles</p>
+                                    <p class="text-secondary mb-2">Detailed description exploring the generation-led knowledge system focused heavily around crafting premium utility equipment cleanly using local forest wild bamboo shoots.</p>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-md-6"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Art A"></div>
+                                        <div class="col-md-6"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Art B"></div>
+                                    </div>
+                                    <small class="text-muted d-block"><i class="fa-regular fa-clock me-1"></i>Posted Date: 2026-05-28 | Time: 10:30 AM</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pane-comm2">
+                            <h4 class="fw-bold text-success mb-3">Malenadu Farmers Collective</h4>
+                            <div class="d-flex flex-column gap-4">
+                                <div class="border-bottom pb-3">
+                                    <p class="fw-bold text-dark mb-1">Organic Cardamom Cultivation Facing Eco Challenges</p>
+                                    <p class="text-secondary mb-2">Comprehensive analysis addressing changing rainfall distributions across hill ranges affecting organic farming outputs.</p>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-md-6"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded" alt="Farm A"></div>
+                                    </div>
+                                    <small class="text-muted d-block"><i class="fa-regular fa-clock me-1"></i>Posted Date: 2026-05-27 | Time: 04:15 PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section id="view-wellwishers" class="app-view-section px-0 py-0">
+            <div class="container-fluid px-0 mb-5">
+                <div id="wellwisherCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+                    
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#wellwisherCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#wellwisherCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#wellwisherCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        
+                        <div class="carousel-item active wellwisher-sliding-frame">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" alt="Sponsor Banner">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-4 border border-secondary border-opacity-20 shadow">
+                                <h4 class="fw-bold text-warning mb-2"><i class="fa-solid fa-earth-americas me-2"></i>Global Diaspora Merchant Alliance</h4>
+                                <p class="mb-0">Wishing Kabbinale grand prosperity. Contact us globally via support channels.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item wellwisher-sliding-frame">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80" alt="Western Ghats Supporters Eco Frame">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-4 border border-secondary border-opacity-20 shadow">
+                                <h4 class="fw-bold text-warning mb-2"><i class="fa-solid fa-seedling me-2"></i>Western Ghats Heritage Conservationists</h4>
+                                <p class="mb-0">Proud to back the environmental preservation and traditional heritage safekeeping initiatives of Kabbinale.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item wellwisher-sliding-frame">
+                            <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1600&q=80" alt="Cultural Devotees Council Frame">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-4 border border-secondary border-opacity-20 shadow">
+                                <h4 class="fw-bold text-warning mb-2"><i class="fa-solid fa-gopuram me-2"></i>Divine Collective Forums &amp; Benefactors</h4>
+                                <p class="mb-0">May the divine entities and ancestral shrines continually protect, guide, and bless the pristine village community.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#wellwisherCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#wellwisherCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+				
+				
+            </div>
+			 <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-success">Our Well-Wishers Portfolio</h2>
+                    <p class="text-muted">Direct industry profiles and individual sponsors advocating for rural growth frameworks.</p>
+                </div>
+                <div class="d-flex flex-column gap-4">
+                    <div class="sponsor-premium-row" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="sponsor-row-overlay d-flex align-items-center">
+                            <div class="sponsor-forehead-content d-flex align-items-center w-100 justify-content-between">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="sponsor-avatar-frame">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Profile">
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold text-white mb-1">Dr. Anindita Hegde Lakshmi</h4>
+                                        <p class="mb-0 text-white-50 small">Providing continuous organic agricultural equipment advisory & medical camp aids.</p>
+                                    </div>
+                                </div>
+                                <a href="https://example.com/hegde-portal" target="_blank" class="btn btn-warning fw-bold px-4">Visit Portal</a>
+                            </div>
+                        </div>
+                    </div>
+					
+					 <div class="sponsor-premium-row" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="sponsor-row-overlay d-flex align-items-center">
+                            <div class="sponsor-forehead-content d-flex align-items-center w-100 justify-content-between">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="sponsor-avatar-frame">
+                                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=200&q=80" alt="Profile">
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold text-white mb-1">Dr. Anindita Hegde Lakshmi</h4>
+                                        <p class="mb-0 text-white-50 small">Providing continuous organic agricultural equipment advisory & medical camp aids.</p>
+                                    </div>
+                                </div>
+                                <a href="https://example.com/hegde-portal" target="_blank" class="btn btn-warning fw-bold px-4">Visit Portal</a>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="sponsor-premium-row">
+				<div class="mt-5 p-4 bg-success text-white rounded text-center shadow-sm">
+					<h4 class="fw-bold mb-2">Want to support the digital preservation of Kabbinale?</h4>
+					<p class="mb-3 small opacity-90">Contributions directly cover domain renewals, cloud image hosting costs, and localization updates.</p>
+					<button class="btn btn-warning fw-bold px-4" data-bs-toggle="modal" data-bs-target="#becomePatronModal">Become a Patron</button>
+				</div>
+				</div>
+                </div>
+            </div>
+        </section>
+        <section id="view-gallery" class="app-view-section px-0 py-0">
+            <div class="container-fluid px-0 mb-5">
+                <div id="galleryTopCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active gallery-sliding-frame">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80" alt="Gallery Slide">
+                        </div>
+                        <div class="carousel-item gallery-sliding-frame">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80" alt="Gallery Slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-success">Village Photo Gallery Landscape</h2>
+                    <p class="text-muted">Random snapshot frames showing pure nature preservation matrices contextually.</p>
+                </div>
+                <div class="row g-4" id="gallery-grid-engine">
+                   
+				   <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 nature-card gallery-clickable-node" data-img="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80" data-name="Pristine Valley Mist Grid" data-cat="Ecology" data-desc="A high resolution view showcasing deep cloud layers moving beautifully through evergreen trees over Western Ghats foothills early morning.">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80" class="card-img-top limelight-thumb" alt="Thumb">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Ecology</span>
+                                <h5 class="fw-bold text-dark mb-1">Pristine Valley Mist Grid</h5>
+                                <p class="text-muted small mb-0">A high resolution view showcasing deep cloud layers moving beautifully.</p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4">
+					      <div class="card h-100 nature-card gallery-clickable-node" data-img="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1000&q=80" data-name="Pristine Valley Mist Grid" data-cat="Ecology" data-desc="A high resolution view showcasing deep cloud layers moving beautifully through evergreen trees over Western Ghats foothills early morning.">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" class="card-img-top limelight-thumb" alt="Thumb">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Ecology</span>
+                                <h5 class="fw-bold text-dark mb-1">Pristine Valley Mist Grid</h5>
+                                <p class="text-muted small mb-0">A high resolution view showcasing deep cloud layers moving beautifully.</p>
+                            </div>
+                        </div>
+                </div>
+				
+			
+            </div>
+        </section>
+
+        <div class="modal fade" id="photoShowerPopupWindow" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(4px);">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 14px; overflow:hidden;">
+                    <div class="position-relative">
+                        <img id="shower-large-image" src="" alt="Large View" class="w-100" style="height: 450px; object-fit: cover;">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white p-2 rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4 bg-white text-center">
+                        <span class="badge bg-success mb-2" id="shower-category">Category</span>
+                        <h4 class="fw-bold text-dark mb-3" id="shower-name"></h4>
+                        <p class="text-secondary mb-0" id="shower-description" style="line-height: 1.7;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="view-contact" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6" id="lbl-contact-header">Contact & Support Details</h2>
+                <p class="text-muted" id="lbl-contact-subheader">Get in touch directly with the managing authorities of each temple and administrative sector.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="p-4 bg-white rounded shadow-sm border h-100">
+                        <h4 class="text-success fw-bold mb-3"><i class="fa-solid fa-map-location-dot me-2"></i><span id="lbl-contact-g1-title">General Information</span></h4>
+                        <p class="text-muted small" id="lbl-contact-g1-p">For general village inquiries, research questions, or documentation access regarding Kabbinale, contact the central desk.</p>
+                        <hr>
+                        <p><strong id="lbl-contact-email-tag"><i class="fa-solid fa-envelope text-success me-2"></i> Email:</strong> contact@kabbinale.com</p>
+												
+						<p><strong id="lbl-contact-phone-tag"><i class="fa-solid fa-phone me-2 text-success text-success me-2"></i> Mobile:</strong> 876 260 5759</p>
+						
+                        <p><strong id="lbl-contact-loc-tag"><i class="fa-solid fa-location-dot text-success me-2"></i> Location:</strong> <span id="lbl-contact-loc-val">Kabbinale Village, Hebri Taluk, Udupi District, Karnataka - 576112</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="p-4 bg-white rounded shadow-sm border h-100">
+                        <h4 class="text-success fw-bold mb-3"><i class="fa-solid fa-gopuram me-2"></i><span id="lbl-contact-g2-title">Specific Temple Committees</span></h4>
+                        <div class="list-group list-group-flush small">
+                            <div>
+                                <h6 class="fw-bold mb-1" id="c-t1">Uma Maheshwara (Vittalagundi):</h6>
+                                <p class="text-secondary small mb-0"><i class="fa-solid fa-phone me-2 text-success"></i>+91 00000 99999 | ttt-sample@kabbinale.com</p>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1" id="c-t2">Lakshminarayana (Melumata):</h6>
+                                <p class="text-secondary small mb-0"><i class="fa-solid fa-phone me-2 text-success"></i>+91 00000 99999 | ttt-sample@kabbinale.com</p>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1" id="c-t3">Venugopala Krishna (Kelamata):</h6>
+                                <p class="text-secondary small mb-0"><i class="fa-solid fa-phone me-2 text-success"></i>+91 00000 99999 | ttt-sample@kabbinale.com</p>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1" id="c-t4">Daivasthana & Tribal Heritage Board:</h6>
+                                <p class="text-secondary small mb-0"><i class="fa-solid fa-phone me-2 text-success"></i>+91 00000 99999 | ttt-sample@kabbinale.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-sponsors" class="app-view-section container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success display-6" id="lbl-sponsors-header">Web Portal Maintenance Patrons</h2>
+                <p class="text-muted" id="lbl-sponsors-subheader">A special thank you to the voluntary sponsors who fund the operational hosting and maintenance of this digital space.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    
+                    <a href="https://www.hegdegroup-placeholder.org" target="_blank" rel="noopener noreferrer" class="sponsor-premium-row" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="sponsor-row-overlay">
+                            <div class="sponsor-forehead-content d-flex flex-column flex-md-row align-items-center justify-content-between h-100">
+                                <div class="d-flex align-items-center flex-column flex-md-row text-center text-md-start mb-3 mb-md-0">
+                                    <div class="sponsor-avatar-frame me-md-4 mb-3 mb-md-0">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Shri. Ramachandra Hegde">
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-1 text-warning" id="spon-name-1">Shri. Ramachandra Hegde & Family</h4>
+                                        <p class="text-light opacity-90 small mb-2" id="spon-loc-1">Bangalore / Kabbinale</p>
+                                        <p class="mb-0 text-white small italic opacity-75">"Wishing grand success to all historic temple development celebrations. Proud to support our ancestral legacy."</p>
+                                    </div>
+                                </div>
+                                <div class="text-md-end">
+                                    <span class="badge bg-warning text-dark px-4 py-2 fw-bold shadow" id="spon-badge-1"><i class="fa-solid fa-crown me-1"></i> Active Premium Sponsor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.melumatashrine-placeholder.net" target="_blank" rel="noopener noreferrer" class="sponsor-premium-row" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="sponsor-row-overlay">
+                            <div class="sponsor-forehead-content d-flex flex-column flex-md-row align-items-center justify-content-between h-100">
+                                <div class="d-flex align-items-center flex-column flex-md-row text-center text-md-start mb-3 mb-md-0">
+                                    <div class="sponsor-avatar-frame me-md-4 mb-3 mb-md-0">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Melumata Devotees Forum">
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-1 text-warning" id="spon-name-2">Melumata Devotees Collective Forum</h4>
+                                        <p class="text-light opacity-90 small mb-2" id="spon-loc-2">Regional Residents Group</p>
+                                        <p class="mb-0 text-white small italic opacity-75">Business Contact: info@melumatadevotees.org | Contact us to participate in quarterly heritage restoration drives.</p>
+                                    </div>
+                                </div>
+                                <div class="text-md-end">
+                                    <span class="badge bg-warning text-dark px-4 py-2 fw-bold shadow" id="spon-badge-2"><i class="fa-solid fa-users me-1"></i> Active Sponsor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.kabbinale-ecoclub-placeholder.com" target="_blank" rel="noopener noreferrer" class="sponsor-premium-row" style="background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="sponsor-row-overlay">
+                            <div class="sponsor-forehead-content d-flex flex-column flex-md-row align-items-center justify-content-between h-100">
+                                <div class="d-flex align-items-center flex-column flex-md-row text-center text-md-start mb-3 mb-md-0">
+                                    <div class="sponsor-avatar-frame me-md-4 mb-3 mb-md-0">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Eco-Club Patrons">
+                                    </div>
+                                    <div>
+                                        <h4 class="fw-bold mb-1 text-warning" id="spon-name-3">Kabbinale Nature & Eco-Club Patrons</h4>
+                                        <p class="text-light opacity-90 small mb-2" id="spon-loc-3">Udupi / Global Diaspora</p>
+                                        <p class="mb-0 text-white small italic opacity-75">Click here to browse our wild biodiversity records, herbal nursery catalog, and environmental tour schedules.</p>
+                                    </div>
+                                </div>
+                                <div class="text-md-end">
+                                    <span class="badge bg-warning text-dark px-4 py-2 fw-bold shadow" id="spon-badge-3"><i class="fa-solid fa-leaf me-1"></i> Active Sponsor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+			
+            <div class="mt-5 p-4 bg-success text-white rounded text-center shadow-sm">
+                <h4 class="fw-bold mb-2">Want to support the digital preservation of Kabbinale?</h4>
+                <p class="mb-3 small opacity-90">Contributions directly cover domain renewals, cloud image hosting costs, and localization updates.</p>
+                <button class="btn btn-warning fw-bold px-4" data-bs-toggle="modal" data-bs-target="#becomePatronModal">Become a Patron</button>
+            </div>
+        </section>
+
+        <div class="modal fade" id="becomePatronModal" tabindex="-1" aria-labelledby="becomePatronModalLabel" aria-hidden="true" style="backdrop-filter: blur(6px);">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg" style="border-radius: 16px; overflow: hidden;">
+                    <div class="modal-header text-white p-4 d-flex align-items-center justify-content-between" style="background: linear-gradient(135deg, var(--forest-deep) 0%, var(--leaf-vibrant) 100%); border-bottom: 3px solid var(--gold-luxury);">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-hands-praying text-warning fs-3 me-3"></i>
+                            <div>
+                                <h5 class="modal-title fw-bold" id="becomePatronModalLabel" style="letter-spacing: 0.5px;">Become a Sacred Heritage Patron</h5>
+                                <small class="text-white-50">Support Kabbinale Non-Profit Digital Infrastructure</small>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4 bg-light">
+                        <p class="text-secondary small mb-4">
+                            Thank you for your generous choice to support the Western Ghats digital biosphere and temple records workspace. Below are the verified central bank coordinates and official contact information managed by the community board.
+							
+                        </p>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-7">
+                                <div class="bg-white p-3 rounded shadow-sm border mb-3">
+                                    <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-building-columns me-2"></i>Official Bank Details</h6>
+                                    <div class="small text-secondary">
+                                        <p class="mb-2"><strong>Account Name:</strong> Kabbinale Village Temple Trust & Digital Board</p>
+                                        <p class="mb-2"><strong>Bank Name:</strong> State Bank of India (SBI)</p>
+                                        <p class="mb-2"><strong>Account Number:</strong> 409823145567 (Mock Core)</p>
+                                        <p class="mb-2"><strong>IFSC Code:</strong> SBIN0003412</p>
+                                        <p class="mb-0"><strong>Branch:</strong> Hebri Main Junction Sector</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded shadow-sm border">
+                                    <h6 class="fw-bold text-success mb-3"><i class="fa-solid fa-address-book me-2"></i>Administration Desk</h6>
+                                    <div class="small text-secondary">
+                                        <p class="mb-2"><strong><i class="fa-solid fa-phone text-success me-2"></i>Mobile Contact:</strong> +91 94821 55621 / +91 820 256143</p>
+                                        <p class="mb-2"><strong><i class="fa-solid fa-envelope text-success me-2"></i>Email Desk:</strong> patron-support@kabbinale.com</p>
+                                        <p class="mb-0"><strong><i class="fa-solid fa-location-dot text-success me-2"></i>Postal Address:</strong> Central Temple Board Office, Main Ridge Highway Junction, Kabbinale Village, Hebri Taluk, Udupi District, Karnataka - 576112</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 text-center d-flex flex-column justify-content-center">
+                                <div class="bg-white p-4 rounded shadow-sm border h-100 d-flex flex-column justify-content-center align-items-center">
+                                    <h6 class="fw-bold text-dark mb-2"><i class="fa-solid fa-qrcode me-2 text-primary"></i>Instant UPI Scan Box</h6>
+                                    <p class="text-muted extra-small mb-3" style="font-size: 0.75rem;">Supports BHIM, GooglePay, PhonePe, & Paytm apps</p>
+                                    
+                                    <div class="qr-mock-box d-flex flex-column align-items-center justify-content-center border border-2 border-dashed border-success position-relative mb-3">
+                                        <i class="fa-solid fa-qrcode text-dark fs-1 opacity-75"></i>
+                                        <div class="position-absolute bottom-0 start-50 translate-middle-x bg-success text-white px-2 py-0 rounded mb-1" style="font-size: 0.6rem; font-weight: bold;">
+                                            UPI ID MOCK
+                                        </div>
+                                    </div>
+                                    
+                                    <span class="badge bg-light text-primary border border-primary px-3 py-1 small fw-mono">kabbinale@sbi</span>
+                                    <p class="text-muted extra-small mt-2 mb-0" style="font-size: 0.7rem;">*Please email receipts to update active listings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-white border-top p-3 d-flex justify-content-between align-items-center">
+                        <small class="text-muted fw-semibold"><i class="fa-solid fa-shield-halved text-success me-1"></i> Secured Non-Profit Fund Allocation</small>
+                        <button type="button" class="btn btn-success font-semibold px-4" data-bs-dismiss="modal">Close Window</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <h5 class="fw-bold text-white"><i class="fa-solid fa-mountain-sun text-warning me-2"></i>KABBINALE ECO-PORTAL</h5>
+                    <p class="small text-muted-footer" style="color: #a3b19b; line-height: 1.6;" id="foot-desc">
+                        A community-driven non-profit digital gateway highlighting the cultural integrity, green environmental heritage, historic ancestral lineages, and sacred environments of Kabbinale Village.
+                    </p>
+                </div>
+                <div class="col-md-3 ms-auto">
+                    <h5 class="fw-bold text-white" id="foot-links-title">Quick Navigation</h5>
+                    <ul class="list-unstyled small">
+					
+                        <li class="mb-2"><a href="#" data-target-view="home">Home Splendor</a></li>
+                        <li class="mb-2"><a href="#" data-target-view="about">Divine Sanctuaries</a></li>
+                        <li class="mb-2"><a href="#" data-target-view="events">Festivals Map</a></li>
+                        <li class="mb-2"><a href="#" data-target-view="news">Village Chronicles</a></li>
+						
+                        <li class="mb-2"><a href="#" data-target-view="contact">Contact Information</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-white" id="foot-loc-title">Administrative Jurisdiction</h5>
+                    <p class="small text-white-50 mb-0" id="foot-loc-text">
+                        Hebri Taluk Administration,<br>
+                        Western Ghats Foothills Sector,<br>
+                        Udupi District, Karnataka, India
+                    </p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.15)">
+            <div class="row small text-center text-md-start">
+                <div class="col-md-6 text-white-50">
+                    &copy; <script>document.write(new Date().getFullYear());</script> Kabbinale Village Community Portal. All Sacred Rights Preserved.
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0" style="color: #a3b19b;">
+                    Designed for Eco Community Awareness and Heritage Preservation.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global Localized Multi-lingual Dictionary Context
+        const dictionary = {
+            English: {
+                ticker: "Welcome to Kabbinale Eco-Portal! Experience the pure untouched nature, pristine evergreen deep forests, historic divine shrines, and cultural legacy of the western ghats foothills. IMPORTANT NOTE: Kabbinale.com administration or portal is not responsible for any misuse or misrepresentation of the information displayed here. The team collects information from various sources and shares it on this portal for educational and entertainment purposes only. If you have any objections or concerns regarding any content, please contact the administration team immediately and share your concerns. Necessary action will be taken as soon as possible.",
+                subtext: "Vibrant Nature Eco-Portal",
+                mHome: "Home", mAbout: "About Temples", mEvents: "Events", mNews: "News", mContact: "Contact Us", mSponsors: "Sponsors",
+                statHouses: "Total Residential Houses", statPopulation: "Active Residents Community", statNature: "Ayurvedic Biodiversity Flora",
+                welcomeTitle: "The Natural Splendor of Kabbinale",
+                welcomeP1: "Kabbinale is a unique settlement wrapped perfectly within wild mountain ranges and expansive evergreen woods. The pristine atmosphere is enriched by dense canopies, teeming wildlife habitats, and a diverse range of indigenous avian species.",
+                welcomeP2: "The ecosystem serves as a vast natural repository of organic forest fruits and potent medicinal herbs, safeguarding age-old Ayurvedic botanical secrets passed down through generations.",
+                aboutHeader: "Divine Temples & Daivasthanas",
+                aboutSubheader: "Explore the historic spiritual entities that protect and guide the village landscape.",
+                eventsHeader: "Community Festive Gatherings",
+                eventsSubheader: "Stay updated on festivals and dynamic events across the temples and cultural institutions of Kabbinale.",
+                newsHeader: "Kabbinale Journal & Live Chronicles",
+                newsSubheader: "Stay localized with brief insights, institutional announcements, and recent analytical journals directly from the village ecosystem.",
+                contactHeader: "Contact & Support Details",
+                contactSubheader: "Get in touch directly with the managing authorities of each temple and administrative sector.",
+                contactG1Title: "General Information",
+                contactG1P: "For general village inquiries, research questions, or documentation access regarding Kabbinale, contact the central desk.",
+                contactEmailTag: " Email:", contactLocTag: " Location:",
+                contactLocVal: "Kabbinale Village, Hebri Taluk, Udupi District, Karnataka - 576112",
+                contactG2Title: "Specific Temple Committees",
+                sponsorsHeader: "Web Portal Maintenance Patrons",
+                sponsorsSubheader: "A special thank you to the voluntary sponsors who fund the operational hosting and maintenance of this digital space.",
+                footDesc: "A community-driven non-profit digital gateway highlighting the cultural integrity, green environmental heritage, historic ancestral lineages, and sacred environments of Kabbinale Village.",
+                footLinksTitle: "Quick Navigation", footLocTitle: "Administrative Jurisdiction",
+                footLocText: "Hebri Taluk Administration,<br>Western Ghats Foothills Sector,<br>Udupi District, Karnataka, India"
+            },
+            Kannada: {
+                ticker: "ಕಬ್ಬಿನಾಲೆ ಪರಿಸರ-ಪೋರ್ಟಲ್‌ಗೆ ಸುಸ್ವಾಗತ! ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ತಪ್ಪಲಿನ ಶುದ್ಧ ಪ್ರಕೃತಿ, ನಿತ್ಯಹರಿದ್ವರ್ಣ ಕಾಡುಗಳು, ಐತಿಹಾಸಿಕ ದೈವಿಕ ಕ್ಷೇತ್ರಗಳು ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯನ್ನು ಅನುಭವಿಸಿ.",
+                subtext: "ಜೀವಂತ ಪ್ರಕೃತಿ ಪರಿಸರ ಜಾಲತಾಣ",
+                mHome: "ಮುಖಪುಟ", mAbout: "ಕ್ಷೇತ್ರಗಳ ಮಾಹಿತಿ", mEvents: "ಸಂಭ್ರಮಗಳು", mNews: "ಸುದ್ದಿಗಳು", mContact: "ಸಂಪರ್ಕಿಸಿ", mSponsors: "ದಾನಿಗಳು",
+                statHouses: "ಒಟ್ಟು ವಸತಿ ಗೃಹಗಳು", statPopulation: "ಸಕ್ರಿಯ ನಿವಾಸಿಗಳ ಸಮುದಾಯ", statNature: "ಆಯುರ್ವೇದ ಜೀವವೈವಿಧ್ಯ ಸಸ್ಯವರ್ಗ",
+                welcomeTitle: "ಕಬ್ಬಿನಾಲೆಯ ನೈಸರ್ಗಿಕ ವೈಭವ",
+                welcomeP1: "ಕಬ್ಬಿನಾಲೆ ಯು ಕಾಡು ಗುಡ್ಡಗಾಡು ಶ್ರೇಣಿಗಳು ಮತ್ತು ವಿಶಾಲವಾದ ನಿತ್ಯಹರಿದ್ವರ್ಣ ಕಾಡುಗಳ ನಡುವೆ ಸಂಪೂರ್ಣವಾಗಿ ಸುತ್ತುವರೆದಿರುವ ಒಂದು ವಿಶಿಷ್ಟ ವಸಾಹತು ಆಗಿದೆ. ಇಲ್ಲಿನ ಸ್ವಚ್ಛ ಪರಿಸರವು ದಟ್ಟವಾದ ಮರಗಳು ಮತ್ತು ವೈವಿಧ್ಯಮಯ ಪಕ್ಷಿ ಪ್ರಭೇದಗಳಿಂದ ಸಮೃದ್ಧವಾಗಿದೆ.",
+                welcomeP2: "ಈ ಪರಿಸರ ವ್ಯವಸ್ಥೆಯು ಸಾವಯವ ಕಾಡಿನ ಹಣ್ಣುಗಳು ಮತ್ತು ಶಕ್ತಿಶಾಲಿ ಔಷಧೀಯ ಗಿಡಮೂಲಿಕೆಗಳ ಒಂದು ದೊಡ್ಡ ನೈಸರ್ಗಿಕ ಭಂಡಾರವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ, ತಲೆಮಾರುಗಳಿಂದ ಬಂದ ಆಯುರ್ವೇದ ಸಸ್ಯಶಾಸ್ತ್ರದ ರಹಸ್ಯಗಳನ್ನು ರಕ್ಷಿಸುತ್ತದೆ.",
+                aboutHeader: "ದೈವಿಕ ದೇವಾಲಯಗಳು ಮತ್ತು ದೈವಸ್ಥಾನಗಳು",
+                aboutSubheader: "ಗ್ರಾಮದ ಪ್ರಕೃತಿಯನ್ನು ರಕ್ಷಿಸುವ ಮತ್ತು ಮುನ್ನಡೆಸುವ ಐತಿಹಾಸಿಕ ಆಧ್ಯಾತ್ಮಿಕ ಕ್ಷೇತ್ರಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.",
+                eventsHeader: "ಸಮುದಾಯದ ಹಬ್ಬದ ಕೂಟಗಳು",
+                eventsSubheader: "ಕಬ್ಬಿನಾಲೆಯ ದೇವಾಲಯಗಳು ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಸಂಸ್ಥೆಗಳಾದ್ಯಂತ ಹಬ್ಬಗಳು ಮತ್ತು ಕ್ರಿಯಾತ್ಮಕ ಘಟನೆಗಳ ಕುರಿತು ನವೀಕೃತವಾಗಿರಿ.",
+                newsHeader: "ಕಬ್ಬಿನಾಲೆ ಜರ್ನಲ್ ಮತ್ತು ಲೈವ್ ಕ್ರಾನಿಕಲ್ಸ್",
+                newsSubheader: "ಗ್ರಾಮದ ಪರಿಸರ ವ್ಯವಸ್ಥೆಯಿಂದ ನೇರವಾಗಿ ಸಂಕ್ಷಿಪ್ತ ಒಳನೋಟಗಳು, ಸಾಂಸ್ಥಿಕ ಪ್ರಕಟಣೆಗಳು ಮತ್ತು ಇತ್ತೀಚಿನ ವಿಶ್ಲೇಷಣಾತ್ಮಕ ಜರ್ನಲ್‌ಗಳೊಂದಿಗೆ ಸ್ಥಳೀಯರಾಗಿರಿ.",
+                contactHeader: "ಸಂಪರ್ಕ ಮತ್ತು ಬೆಂಬಲ ವಿವರಗಳು",
+                contactSubheader: "ಪ್ರತಿ ದೇವಾಲಯದ ವ್ಯವಸ್ಥಾಪಕ ಅಧಿಕಾರಿಗಳು ಮತ್ತು ಆಡಳಿತ ವಲಯದೊಂದಿಗೆ ನೇರವಾಗಿ ಸಂಪರ್ಕ ಸಾಧಿಸಿ.",
+                contactG1Title: "ಸಾಮಾನ್ಯ ಮಾಹಿತಿ",
+                contactG1P: "ಕಬ್ಬಿನಾಲೆಗೆ ಸಂಬಂಧಿಸಿದ ಸಾಮಾನ್ಯ ಗ್ರಾಮ ವಿಚಾರಣೆಗಳು, ಸಂಶೋಧನಾ ಪ್ರಶ್ನೆಗಳು ಅಥವಾ ದಸ್ತಾವೇಜನ್ನು ಪ್ರವೇಶಿಸಲು, ಕೇಂದ್ರ ಡೆಸ್ಕ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+                contactEmailTag: " ಇಮೇಲ್:", contactLocTag: " ಸ್ಥಳ:",
+                contactLocVal: "ಕಬ್ಬಿನಾಲೆ ಗ್ರಾಮ, ಹೆಬ್ರಿ ತಾಲೂಕು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ - 576112",
+                contactG2Title: "ವಿಶೇಷ ದೇವಾಲಯ ಸಮಿತಿಗಳು",
+                sponsorsHeader: "ವೆಬ್ ಪೋರ್ಟಲ್ ನಿರ್ವಹಣಾ ದಾನಿಗಳು",
+                sponsorsSubheader: "ಈ ಡಿಜಿಟಲ್ ಜಾಗದ ಕಾರ್ಯಾಚರಣೆಯ ಹೋಸ್ಟಿಂಗ್ ಮತ್ತು ನಿರ್ವಹಣೆಗೆ ಧನಸಹಾಯ ನೀಡುವ ಸ್ವಯಂಪ್ರೇರಿತ ಪ್ರಾಯೋಜಕರಿಗೆ ವಿಶೇಷ ಧನ್ಯವಾದಗಳು.",
+                footDesc: "ಕಬ್ಬಿನಾಲೆ ಗ್ರಾಮದ ಸಾಂಸ್ಕೃತಿಕ ಸಮಗ್ರತೆ, ಹಸಿರು ಪರಿಸರ ಪರಂಪರೆ, ಐತಿಹಾಸಿಕ ಪೂರ್ವರೂಪದ ವಂಶಾವಳಿಗಳು ಮತ್ತು ಪವಿತ್ರ ಪರಿಸರವನ್ನು ಎತ್ತಿ ತೋರಿಸುವ ಸಮುದಾಯ ಚಾಲಿತ ಲಾಭರಹಿತ ಡಿಜಿಟಲ್ ಗೇಟ್‌ವೇ.",
+                footLinksTitle: "ತ್ವರಿತ ನ್ಯಾವಿಗೇಷನ್", footLocTitle: "ಆಡಳಿತಾತ್ಮಕ ಅಧಿಕಾರ ವ್ಯಾಪ್ತಿ",
+                footLocText: "ಹೆಬ್ರಿ ತಾಲೂಕು ಆಡಳಿತ,<br>ಪಶ್ಚಿಮ ಘಟ್ಟಗಳ ತಪ್ಪಲು ವಲಯ,<br>ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ, ಭಾರತ"
+            }
+        };
+
+        // Static Historical News Framework Context Array Engine Object
+        const newsDatabase = [
+            {
+                id: "news-node-290501",
+                category: "Heritage Preservation",
+                date: "May 24, 2026",
+                title: "Restoration Blueprint Passed for Uma Maheshwara Shrine Footpath",
+                summary: "The local village integration committee approved a non-invasive ecological stone paving design to ease access for senior citizens walking up to Vittalagundi.",
+                detail: "Following an extensive consultation period with indigenous botanical monitors and temple architects, a sustainable development layout has been officially signed. The path construction will utilize native granite boulders without removing old growth tree systems or changing watershed vectors flowing towards downstream river valleys."
+            },
+            {
+                id: "news-node-290502",
+                category: "Ecological Survey",
+                date: "May 18, 2026",
+                title: "Rare Orchids Cataloged Inside Kodamanitthaya Sacred Grove Sector",
+                summary: "Environmental research volunteers recorded twelve endemic orchid varieties blooming simultaneously after the early pre-monsoon precipitation drops.",
+                detail: "A specialized group of plant researchers from regional colleges completed a week-long inventory inside the old growth community forest lines. The data confirms that the microclimate surrounding the shrines has remained completely unpolluted, providing adequate humidity for sensitive vascular epiphyte populations."
+            },
+            {
+                id: "news-node-290503",
+                category: "Community Trust",
+                date: "May 10, 2026",
+                title: "Annual Educational Book Distribution Set at Kelamata Assembly Hall",
+                summary: "Patrons confirmed funding to support primary textbooks, green notebooks, and organic seed kits for all local school students arriving next week.",
+                detail: "Continuing a long-standing village collaboration tradition, the educational assistance desk has finalized arrangements. Alongside standard academic curricula materials, students will receive local herb saplings to plant in their home gardens as part of the youth green monitoring award ecosystem."
+            }
+        ];
+
+
+ // Data Store for Limelight Popup Items
+        const limelightData = [
+            {
+                title: "Vittalagundi Cascade Hidden Falls",
+                category: "Tourist Spots",
+                belongs: "Village Nature Reserve",
+                date: "2026-05-20",
+                briefDesc: "A breathtaking wilderness water stream nestled perfectly within ancient rocks near the foothill parameters.",
+                detailedDesc: "The Vittalagundi Cascade remains an unblemished geological treasure, surrounded by rare native orchids and ancient deep roots. Visitors are advised to seek native community route guides to ensure zero structural pollution remains across the sensitive biodiversity stream.",
+                largeImg: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80"
+            }
+        ];
+
+
+// Limelight Modal Trigger Engine
+        document.querySelectorAll('.btn-limelight-popup').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const index = this.getAttribute('data-index');
+                const data = limelightData[index];
+                if(data) {
+                    document.getElementById('limelight-popup-large-image').src = data.largeImg;
+                    document.getElementById('limelight-popup-category').textContent = data.category;
+                    document.getElementById('limelight-popup-date').innerHTML = `<i class="fa-regular fa-calendar me-1"></i> Published: ${data.date} (Belongs to: ${data.belongs})`;
+                    document.getElementById('limelight-popup-brief').innerHTML = `<b>${data.briefDesc}</b>`;
+                    document.getElementById('limelight-popup-detailed').textContent = data.detailedDesc;
+                    
+                    const limelightModal = new bootstrap.Modal(document.getElementById('limelightDetailedPopupWindow'));
+                    limelightModal.show();
+                }
+            });
+        });
+
+        // Gallery Modal Trigger Engine
+        document.querySelectorAll('.gallery-clickable-node').forEach(card => {
+            card.addEventListener('click', function() {
+                document.getElementById('shower-large-image').src = this.getAttribute('data-img');
+                document.getElementById('shower-category').textContent = this.getAttribute('data-cat');
+                document.getElementById('shower-name').textContent = this.getAttribute('data-name');
+                document.getElementById('shower-description').textContent = this.getAttribute('data-desc');
+                
+                const photoModal = new bootstrap.Modal(document.getElementById('photoShowerPopupWindow'));
+                photoModal.show();
+            });
+        });
+
+
+
+        // Dynamic Router and Section Controller Event Bindings
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // View Navigation Router Manager Context
+            const navigationLinks = document.querySelectorAll("[data-target-view]");
+            const viewSections = document.querySelectorAll(".app-view-section");
+
+            function switchActiveView(targetViewId) {
+                viewSections.forEach(section => {
+                    section.classList.remove("view-active");
+                    if (section.id === `view-${targetViewId}`) {
+                        section.classList.add("view-active");
+                    }
+                });
+
+                navigationLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("data-target-view") === targetViewId && link.classList.contains("nav-link")) {
+                        link.add("active");
+                    }
+                });
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            navigationLinks.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const destination = link.getAttribute("data-target-view");
+                    switchActiveView(destination);
+                });
+            });
+
+            // Dynamic Live News Card Injection Core Engine Loop
+            injectNewsFramework("English");
+
+            // Multi-Lingual Switchboard Activation Trigger
+            const langSelector = document.getElementById("localization-trigger-node");
+            langSelector.addEventListener("change", (e) => {
+                triggerLocalizationMapping(e.target.value);
+            });
+
+            // Filtering Mechanics Engine for Events Grid Layout
+            const filterButtons = document.querySelectorAll(".filter-node-action");
+            const eventCards = document.querySelectorAll(".targeted-event-card");
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    filterButtons.forEach(b => b.classList.remove("btn-success", "active-filter"));
+                    filterButtons.forEach(b => b.classList.add("btn-outline-success"));
+                    
+                    btn.classList.remove("btn-outline-success");
+                    btn.classList.add("btn-success", "active-filter");
+
+                    const scope = btn.getAttribute("data-filter-scope");
+                    eventCards.forEach(card => {
+                        if (scope === "all" || card.getAttribute("data-origin") === scope) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
+
+            // Connect Interactive Live Slider to Information Bar contextually
+            const carouselNode = document.getElementById("homeCarouselIndicators");
+            carouselNode.addEventListener("slide.bs.carousel", (event) => {
+                const index = event.to;
+                updateSliderPanel(index);
+            });
+        });
+
+        // News Generation Block Context Rendering
+        function injectNewsFramework(lang) {
+            const deck = document.getElementById("news-cards-injector-deck");
+            if(!deck) return;
+            deck.innerHTML = "";
+
+            const imagesMockList = [
+                "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80"
+            ];
+
+            newsDatabase.forEach((newsItem, index) => {
+                const col = document.createElement("div");
+                col.className = "col-md-4";
+                
+                // International text fallbacks
+                let readMoreText = lang === "Kannada" ? "ಪೂರ್ಣ ಲೇಖನ ಓದಿ" : "Read Full Chronicle";
+
+                col.innerHTML = `
+                    <div class="card h-100 nature-card shadow-sm">
+                        <div class="news-thumb-frame">
+                            <span class="news-category-badge">${newsItem.category}</span>
+                            <img src="${imagesMockList[index % imagesMockList.length]}" alt="News Image Thumbnail">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <small class="text-success fw-bold d-block mb-1"><i class="fa-regular fa-calendar me-1"></i> ${newsItem.date}</small>
+                                <h5 class="fw-bold card-title text-dark lh-sm text-clamp mb-2" style="font-size:1.1rem; min-height:44px;">${newsItem.title}</h5>
+                                <p class="text-secondary small mb-3">${newsItem.summary}</p>
+                            </div>
+                            <button class="btn btn-outline-success btn-sm w-100 fw-semibold mt-2" onclick="launchNewsReaderModal('${newsItem.id}', '${imagesMockList[index % imagesMockList.length]}')">
+                                <i class="fa-solid fa-book-open me-1"></i> ${readMoreText}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                deck.appendChild(col);
+            });
+        }
+
+        // News Modal System Launch Management
+        function launchNewsReaderModal(id, imageUrl) {
+            const item = newsDatabase.find(n => n.id === id);
+            if(!item) return;
+
+            document.getElementById("popup-large-image").src = imageUrl;
+            document.getElementById("popup-category-label").textContent = item.category;
+            document.getElementById("popup-publish-date").innerHTML = `<i class="fa-regular fa-calendar me-1"></i> ${item.date}`;
+            document.getElementById("popup-brief-desc").textContent = item.title;
+            document.getElementById("popup-detailed-desc").textContent = item.detail;
+
+            const modalTarget = new bootstrap.Modal(document.getElementById('newsReaderPopupWindow'));
+            modalTarget.show();
+        }
+
+        // Hero Explanation Bar Text State Controller
+        function updateSliderPanel(activeIndex = 0) {
+            const titleNode = document.getElementById("slider-panel-title");
+            const textNode = document.getElementById("slider-panel-text");
+            const lang = document.getElementById("localization-trigger-node").value;
+
+            const captions = {
+                English: [
+                    { title: "Kabbinale Landscape View", desc: "A mesmerizing view of wild evergreen valleys surrounding the village." },
+                    { title: "Forest Deep Canopy", desc: "Immense woods guarding natural biological systems and medicinal species flora." },
+                    { title: "Therapeutic Plant Environments", desc: "Pristine streams providing hydration to pure traditional Ayurvedic herb collections." }
+                ],
+                Kannada: [
+                    { title: "ಕಬ್ಬಿನಾಲೆ ಪ್ರಕೃತಿ ನೋಟ", desc: "ಗ್ರಾಮವನ್ನು ಸುತ್ತುವರೆದಿರುವ ಕಾಡು ನಿತ್ಯಹರಿದ್ವರ್ಣ ಕಣಿವೆಗಳ ಒಂದು ಅದ್ಭುತ ನೋಟ." },
+                    { title: "ದಟ್ಟವಾದ ಕಾಡಿನ ಮೇಲಾವರಣ", desc: "ನೈಸರ್ಗಿಕ ಜೈವಿಕ ವ್ಯವಸ್ಥೆಗಳು ಮತ್ತು ಔಷಧೀಯ ಸಸ್ಯವರ್ಗವನ್ನು ರಕ್ಷಿಸುವ ಅಗಾಧ ಕಾಡುಗಳು." },
+                    { title: "ಚಿಕಿತ್ಸಕ ಸಸ್ಯ ಪರಿಸರಗಳು", desc: "ಶುದ್ಧ ಸಾಂಪ್ರದಾಯಿಕ ಆಯುರ್ವೇದ ಮೂಲಿಕೆ ಸಂಗ್ರಹಗಳಿಗೆ ತೇವಾಂಶವನ್ನು ಒದಗಿಸುವ ಪ್ರಾಕೃತಿಕ ತೊರೆಗಳು." }
+                ]
+            };
+
+            const currentSet = captions[lang] || captions["English"];
+            if(titleNode && textNode && currentSet[activeIndex]) {
+                titleNode.textContent = currentSet[activeIndex].title;
+                textNode.textContent = currentSet[activeIndex].desc;
+            }
+        }
+
+        // Localized UI Mapper execution core loop
+        function triggerLocalizationMapping(lang) {
+            const data = dictionary[lang];
+            if(!data) return;
+
+            document.getElementById("global-ticker-text").textContent = data.ticker;
+            document.getElementById("brand-subtext").textContent = data.subtext;
+            document.getElementById("m-home").textContent = data.mHome;
+            document.getElementById("m-about").textContent = data.mAbout;
+            document.getElementById("m-events").textContent = data.mEvents;
+            document.getElementById("m-news").textContent = data.mNews;
+            document.getElementById("m-contact").textContent = data.mContact;
+            document.getElementById("m-sponsors").textContent = data.mSponsors;
+
+            document.getElementById("lbl-stat-houses").textContent = data.statHouses;
+            document.getElementById("lbl-stat-population").textContent = data.statPopulation;
+            document.getElementById("lbl-stat-nature").textContent = data.statNature;
+
+            document.getElementById("lbl-welcome-title").textContent = data.welcomeTitle;
+            document.getElementById("lbl-welcome-p1").textContent = data.welcomeP1;
+            document.getElementById("lbl-welcome-p2").textContent = data.welcomeP2;
+
+            document.getElementById("lbl-about-header").textContent = data.aboutHeader;
+            document.getElementById("lbl-about-subheader").textContent = data.aboutSubheader;
+
+            document.getElementById("lbl-events-header").textContent = data.eventsHeader;
+            document.getElementById("lbl-events-subheader").textContent = data.eventsSubheader;
+
+            document.getElementById("lbl-news-header").textContent = data.newsHeader;
+            document.getElementById("lbl-news-subheader").textContent = data.newsSubheader;
+
+            document.getElementById("lbl-contact-header").textContent = data.contactHeader;
+            document.getElementById("lbl-contact-subheader").textContent = data.contactSubheader;
+            document.getElementById("lbl-contact-g1-title").textContent = data.contactG1Title;
+            document.getElementById("lbl-contact-g1-p").textContent = data.contactG1P;
+            document.getElementById("lbl-contact-email-tag").innerHTML = `<i class="fa-solid fa-envelope text-success me-2"></i> ${data.contactEmailTag}`;
+            document.getElementById("lbl-contact-loc-tag").innerHTML = `<i class="fa-solid fa-location-dot text-success me-2"></i> ${data.contactLocTag}`;
+            document.getElementById("lbl-contact-loc-val").textContent = data.contactLocVal;
+            document.getElementById("lbl-contact-g2-title").textContent = data.contactG2Title;
+
+            document.getElementById("lbl-sponsors-header").textContent = data.sponsorsHeader;
+            document.getElementById("lbl-sponsors-subheader").textContent = data.sponsorsSubheader;
+
+            // Sponsor Name Localizations Context Management
+            if(lang === "Kannada") {
+                document.getElementById("spon-name-1").textContent = "ಶ್ರೀ ರಾಮಚಂದ್ರ ಹೆಗಡೆ ಮತ್ತು ಕುಟುಂಬ";
+                document.getElementById("spon-loc-1").textContent = "ಬೆಂಗಳೂರು / ಕಬ್ಬಿನಾಲೆ";
+                document.getElementById("spon-badge-1").textContent = "ಸಕ್ರಿಯ ಪ್ರೀಮಿಯಂ ದಾನಿ";
+
+                document.getElementById("spon-name-2").textContent = "ಮೇಲುಮಠ ಭಕ್ತರ ಸಾಮೂಹಿಕ ವೇದಿಕೆ";
+                document.getElementById("spon-loc-2").textContent = "ಸ್ಥಳೀಯ ನಿವಾಸಿಗಳ ಗುಂಪು";
+                document.getElementById("spon-badge-2").textContent = "ಸಕ್ರಿಯ ದಾನಿ";
+
+                document.getElementById("spon-name-3").textContent = "ಕಬ್ಬಿನಾಲೆ ಪ್ರಕೃತಿ ಮತ್ತು ಪರಿಸರ ಕ್ಲಬ್ ಪೋಷಕರು";
+                document.getElementById("spon-loc-3").textContent = "ಉಡುಪಿ / ಜಾಗತಿಕ ಅನಿವಾಸಿಗಳು";
+                document.getElementById("spon-badge-3").textContent = "ಸಕ್ರಿಯ ದಾನಿ";
+
+                document.getElementById("c-t1").textContent = "ಉಮಾ ಮಹೇಶ್ವರ (ವಿಟ್ಠಲಗುಂಡಿ):";
+                document.getElementById("c-t2").textContent = "ಲಕ್ಷ್ಮೀನಾರಾಯಣ (ಮೇಲುಮಠ):";
+                document.getElementById("c-t3").textContent = "ವೇಣುಗೋಪಾಲ ಕೃಷ್ಣ (ಕೀಳಮಠ):";
+                document.getElementById("c-t4").textContent = "ದೈವಸ್ಥಾನ ಮತ್ತು ಬುಡಕಟ್ಟು ಪರಂಪರೆ ಮಂಡಳಿ:";
+            } else {
+                document.getElementById("spon-name-1").textContent = "Shri. Ramachandra Hegde & Family";
+                document.getElementById("spon-loc-1").textContent = "Bangalore / Kabbinale";
+                document.getElementById("spon-badge-1").textContent = "Active Premium Sponsor";
+
+                document.getElementById("spon-name-2").textContent = "Melumata Devotees Collective Forum";
+                document.getElementById("spon-loc-2").textContent = "Regional Residents Group";
+                document.getElementById("spon-badge-2").textContent = "Active Sponsor";
+
+                document.getElementById("spon-name-3").textContent = "Kabbinale Nature & Eco-Club Patrons";
+                document.getElementById("spon-loc-3").textContent = "Udupi / Global Diaspora";
+                document.getElementById("spon-badge-3").textContent = "Active Sponsor";
+
+                document.getElementById("c-t1").textContent = "Uma Maheshwara (Vittalagundi):";
+                document.getElementById("c-t2").textContent = "Lakshminarayana (Melumata):";
+                document.getElementById("c-t3").textContent = "Venugopala Krishna (Kelamata):";
+                document.getElementById("c-t4").textContent = "Daivasthana & Tribal Heritage Board:";
+            }
+
+            // Footer Translation Mapping
+            document.getElementById("foot-desc").textContent = data.footDesc;
+            document.getElementById("foot-links-title").textContent = data.footLinksTitle;
+            document.getElementById("foot-loc-title").textContent = data.footLocTitle;
+            document.getElementById("foot-loc-text").innerHTML = data.footLocText;
+
+            // Refresh News Grid engine programmatically on translation trigger event context
+            injectNewsFramework(lang);
+
+            // Refresh Hero Explanation Banner Text values contextually
+            updateSliderPanel();
+        }
+    </script>
+</body>
+</html>
