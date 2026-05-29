@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPVNV2SQMD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RPVNV2SQMD'); 
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Kabbinale | Pure Nature & Divine Heritage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Nature Scent Palette - REQUIRMENTS#290526P1242.V1.R1 */
+    :root {
+      --forest-deep: #132a13;
+      --leaf-vibrant: #31572c;
+      --moss-light: #4f772d;
+      --earth-bark: #5c4033;
+      --mist-cream: #f4f7f4;
+      --wood-dark: #2b1d15;
+      --gold-luxury: #d4af37;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--mist-cream);
+      color: #212529;
+      overflow-x: hidden;
+    }
+
+    .navbar-custom {
+      background-color: var(--forest-deep);
+      border-bottom: 3px solid var(--moss-light);
+      transition: all 0.3s ease;
+    }
+    .navbar-custom .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff !important;
+    }
+    .navbar-custom .nav-link {
+      color: #e0e9e0 !important;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      margin: 0 0.1rem;
+      border-radius: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+    .navbar-custom .nav-link:hover, 
+    .navbar-custom .nav-link.active {
+      background-color: var(--leaf-vibrant);
+      color: #ffffff !important;
+    }
+
+    /* Running Banner */
+    .announcement-ticker {
+      background-color: var(--earth-bark);
+      color: #f4f7f4;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    .ticker-wrap {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker-move 35s linear infinite;
+    }
+    @keyframes ticker-move {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+    .ticker-wrap:hover { animation-play-state: paused; cursor: pointer; }
+
+    /* Hero Slider + hover explanation */
+    .hero-slider-frame {
+      position: relative;
+      background: #000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .hero-slider-frame .carousel-item img {
+      height: 550px;
+      object-fit: cover;
+      width: 100%;
+      filter: brightness(75%);
+    }
+    .hover-explanation-panel {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(19,42,19,0.95) 0%, rgba(19,42,19,0.85) 70%, transparent 100%);
+      color: #fff;
+      padding: 50px 30px 30px 30px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
+    }
+    .hero-slider-frame:hover .hover-explanation-panel {
+      transform: translateY(0);
+    }
+
+    /* Subtab styling (About) */
+    .subtab-navigation .nav-link {
+      background-color: #ffffff;
+      color: var(--forest-deep);
+      border: 1px solid #dee2e6;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      text-align: left;
+    }
+    .subtab-navigation .nav-link.active {
+      background-color: var(--moss-light) !important;
+      color: #fff !important;
+    }
+    .temple-mini-slider img {
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Sections management */
+    .app-view-section {
+      display: none;
+      padding: 60px 0;
+      animation: fadeInView 0.4s ease-in-out forwards;
+    }
+    .app-view-section.view-active {
+      display: block;
+    }
+    @keyframes fadeInView {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards */
+    .nature-card {
+      background: #ffffff;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .nature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 28px rgba(49,87,44,0.12);
+    }
+    .news-thumb-frame {
+      height: 200px;
+      overflow: hidden;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      position: relative;
+    }
+    .news-thumb-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .nature-card:hover .news-thumb-frame img {
+      transform: scale(1.05);
+    }
+    .news-category-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--forest-deep);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 30px;
+      border: 1px solid var(--moss-light);
+    }
+
+    /* Sponsors card style (from V5) */
+    .qr-mock-box {
+      background: #f8f9fa;
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .sponsor-premium-row {
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .sponsor-premium-row:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+    .sponsor-row-overlay {
+      background: linear-gradient(90deg, rgba(19,42,19,0.92) 0%, rgba(19,42,19,0.7) 70%);
+      padding: 1.8rem;
+    }
+    .sponsor-avatar-frame {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-luxury);
+      overflow: hidden;
+      background: white;
+    }
+
+    /* Gallery & limelight common */
+    .limelight-thumb, .gallery-img-card {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    .gallery-clickable-node {
+      cursor: pointer;
+    }
+    footer {
+      background-color: var(--wood-dark);
+      color: #dcd1c4;
+      padding: 50px 0 25px;
+      border-top: 5px solid var(--earth-bark);
+    }
+    footer a {
+      color: #a3b19b;
+      text-decoration: none;
+    }
+    footer a:hover { color: white; }
+    .lang-node-selector {
+      border: 1px solid var(--moss-light);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 6px;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="announcement-ticker">
+  <div class="ticker-wrap" id="global-ticker-text">
+    🌿 Welcome to Kabbinale Eco-Portal! Experience pure untouched nature, pristine evergreen forests, historic divine shrines & cultural legacy.
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#" data-target-view="home">
+      <i class="fa-solid fa-mountain-sun text-warning me-2 fs-3"></i>
+      <div>
+        <span class="d-block lh-1 fw-bold">KABBINALE</span>
+        <small style="font-size: 0.65rem; color: #a3b19b;" id="brand-subtext">Vibrant Nature Eco-Portal</small>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="primary-menu-tabs">
+        <li class="nav-item"><a class="nav-link active" href="#" data-target-view="home" id="m-home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="about" id="m-about">About Temples</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="events" id="m-events">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="news" id="m-news">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="limelight" id="m-limelight">Limelight</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="community" id="m-community">Community Hub</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="wellwishers" id="m-wellwishers">Well-Wishers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="gallery" id="m-gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="contact" id="m-contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target-view="sponsors" id="m-sponsors">Sponsors</a></li>
+      </ul>
+      <div class="ms-3 d-flex align-items-center">
+        <i class="fa-solid fa-language text-white-50 me-1"></i>
+        <select class="lang-node-selector" id="localization-trigger-node">
+          <option value="English">English</option>
+          <option value="Kannada">ಕನ್ನಡ</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= HOME SECTION ================= -->
+<section id="view-home" class="app-view-section view-active pt-0">
+  <div class="container-fluid px-0">
+    <div class="hero-slider-frame">
+      <div id="homeCarouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80" alt="Valley"></div>
+          <div class="carousel-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80" alt="Forest"></div>
+          <div class="carousel-item"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1600&q=80" alt="Plants"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarouselIndicators" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+      </div>
+      <div class="hover-explanation-panel">
+        <h3 class="fw-bold text-warning" id="slider-panel-title">Kabbinale Landscape View</h3>
+        <p class="mb-0" id="slider-panel-text">A mesmerizing view of wild evergreen valleys surrounding the village.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row g-4 text-center mb-5">
+      <div class="col-md-4"><div class="p-4 nature-card border-top border-4 border-success"><i class="fa-solid fa-house-chimney text-success fs-1 mb-3"></i><h3 class="fw-bold">800+</h3><p class="text-muted fw-semibold mb-0" id="lbl-stat-houses">Total Houses</p></div></div>
+      <div class="col-md-4"><div class="p-4 nature-card border-top border-4 border-success"><i class="fa-solid fa-users text-success fs-1 mb-3"></i><h3 class="fw-bold">2000+</h3><p class="text-muted fw-semibold mb-0" id="lbl-stat-population">Active Residents</p></div></div>
+      <div class="col-md-4"><div class="p-4 nature-card border-top border-4 border-success"><i class="fa-solid fa-seedling text-success fs-1 mb-3"></i><h3 class="fw-bold">100%</h3><p class="text-muted fw-semibold mb-0" id="lbl-stat-nature">Ayurvedic Flora</p></div></div>
+    </div>
+    <div class="row align-items-center bg-white rounded-4 shadow-sm p-4 mx-1">
+      <div class="col-lg-6"><h2 class="text-success fw-bold mb-3" id="lbl-welcome-title">The Natural Splendor of Kabbinale</h2><p class="text-secondary mb-3" id="lbl-welcome-p1">Kabbinale is a unique settlement wrapped within wild mountain ranges and expansive evergreen woods...</p><p class="text-secondary" id="lbl-welcome-p2">The ecosystem serves as a vast natural repository of organic forest fruits and potent medicinal herbs.</p></div>
+      <div class="col-lg-6 mt-4 mt-lg-0"><div class="row g-2"><div class="col-6"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded shadow-sm"></div><div class="col-6"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded shadow-sm"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT (Tab system with sliders, original robust design) ================= -->
+<section id="view-about" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-about-header">Divine Temples & Daivasthanas</h2><p class="text-muted" id="lbl-about-subheader">Explore spiritual entities that protect the village landscape.</p></div>
+  <div class="row">
+    <div class="col-lg-4 mb-4"><div class="nav flex-column nav-pills subtab-navigation" id="temple-sub-navigation"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pane-t1"><i class="fa-solid fa-gopuram me-2"></i>Uma Maheshwara Vittalagundi</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t2"><i class="fa-solid fa-gopuram me-2"></i>Lakshminarayana Melumata</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t3"><i class="fa-solid fa-gopuram me-2"></i>Venugopala Krishna Kelamata</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t4"><i class="fa-solid fa-gopuram me-2"></i>Kodamanitthaya Daivasthana</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t5"><i class="fa-solid fa-gopuram me-2"></i>Sathya Devathe Kelamata</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-t6"><i class="fa-solid fa-gopuram me-2"></i>Kaalaraahvu Kshetra</button></div></div>
+    <div class="col-lg-8"><div class="tab-content bg-white p-4 rounded-4 shadow-sm border"><div class="tab-pane fade show active" id="pane-t1"><h3 class="fw-bold text-success">Uma Maheshwara Vittalagundi</h3><div id="slider-t1" class="carousel slide mb-3" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active"><img src="https://images.unsplash.com/photo-1609137144813-2d17c918ee91?auto=format&fit=crop&w=800&q=80" class="d-block w-100 rounded-3"></div><div class="carousel-item"><img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" class="d-block w-100 rounded-3"></div></div></div><p class="text-secondary">Historic temple dedicated to Lord Shiva and Goddess Uma, meditation & community connection.</p></div><div class="tab-pane fade" id="pane-t2"><h3 class="fw-bold text-success">Lakshminarayana Melumata</h3><div class="carousel slide mb-3"><div class="carousel-inner"><div class="carousel-item active"><img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80" class="d-block w-100 rounded-3"></div></div></div><p class="text-secondary">Elevated ridges, ancient rituals and grand community assemblies.</p></div><div class="tab-pane fade" id="pane-t3"><h3 class="fw-bold text-success">Venugopala Krishna Kelamata</h3><div class="carousel slide mb-3"><div class="carousel-inner"><div class="carousel-item active"><img src="https://images.unsplash.com/photo-1561361531-997c5d23db16?auto=format&fit=crop&w=800&q=80" class="d-block w-100 rounded-3"></div></div></div><p class="text-secondary">Peaceful devotional music, continuous spiritual energy.</p></div><div class="tab-pane fade" id="pane-t4"><h3 class="fw-bold text-success">Kodamanitthaya Daivasthana Melumata</h3><p class="text-secondary">Protective deity, spiritual anchor for village historic lineage.</p></div><div class="tab-pane fade" id="pane-t5"><h3 class="fw-bold text-success">Sathya Devathe Kelamata</h3><p class="text-secondary">Symbol of truth and justice, integral role in cultural lifecycle.</p></div><div class="tab-pane fade" id="pane-t6"><h3 class="fw-bold text-success">Kaalaraahvu Kshetra</h3><p class="text-secondary">Sacred grove preserving nature-aligned worship.</p></div></div></div>
+  </div>
+</section>
+
+<!-- ================= EVENTS (filterable cards) ================= -->
+<section id="view-events" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-events-header">Community Festive Gatherings</h2><p class="text-muted" id="lbl-events-subheader">Festivals across temples & cultural institutions</p></div>
+  <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+    <button class="btn btn-success filter-node-action active-filter" data-filter-scope="all">All Events</button>
+    <button class="btn btn-outline-success filter-node-action" data-filter-scope="t1">Uma Maheshwara</button>
+    <button class="btn btn-outline-success filter-node-action" data-filter-scope="t2">Lakshminarayana</button>
+    <button class="btn btn-outline-success filter-node-action" data-filter-scope="t3">Venugopala Krishna</button>
+    <button class="btn btn-outline-success filter-node-action" data-filter-scope="village">Village General</button>
+  </div>
+  <div class="row g-4" id="events-grid-engine">
+    <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t1"><div class="card h-100 nature-card border-start border-success border-4"><div class="card-body"><div class="d-flex justify-content-between"><span class="badge bg-success">Uma Maheshwara</span><small>Vittalagundi</small></div><h5 class="fw-bold mt-2">Maha Rathotsava</h5><p class="text-secondary small">Grand chariot festival, traditional music & community feast.</p><hr><span class="text-success small"><i class="fa-regular fa-clock me-1"></i>Phalguna Masa</span></div></div></div>
+    <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t2"><div class="card h-100 nature-card border-start border-primary border-4"><div class="card-body"><span class="badge bg-primary">Lakshminarayana</span><h5 class="fw-bold mt-2">Shravana Deepotsava</h5><p class="text-secondary small">Thousands of clay lamps across Melumata ridges.</p><hr><span class="text-primary small"><i class="fa-regular fa-clock me-1"></i>Shravana Month</span></div></div></div>
+    <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="t3"><div class="card h-100 nature-card border-start border-warning border-4"><div class="card-body"><span class="badge bg-warning text-dark">Venugopala Krishna</span><h5 class="fw-bold mt-2">Sri Krishna Janmashtami</h5><p class="text-secondary small">Flute recitals, Mosaru Kudike, devotional singing.</p><hr><span class="text-dark small"><i class="fa-regular fa-clock me-1"></i>Bhadrapada</span></div></div></div>
+    <div class="col-md-6 col-lg-4 targeted-event-card" data-origin="village"><div class="card h-100 nature-card border-start border-danger border-4"><div class="card-body"><span class="badge bg-danger">Village General</span><h5 class="fw-bold mt-2">Ayurvedic Botany & Seed Exchange</h5><p class="text-secondary small">Elder residents share rare forest fruits & medicinal saplings.</p><hr><span class="text-danger small"><i class="fa-regular fa-clock me-1"></i>Pre-Monsoon</span></div></div></div>
+  </div>
+</section>
+
+<!-- ================= NEWS (injected) ================= -->
+<section id="view-news" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-news-header">Kabbinale Journal & Live Chronicles</h2><p class="text-muted" id="lbl-news-subheader">Insights, announcements from village ecosystem.</p></div>
+  <div class="row g-4" id="news-cards-injector-deck"></div>
+</section>
+
+<!-- ================= LIMELIGHT (V5 feature) ================= -->
+<section id="view-limelight" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-limelight-header">Village Limelight</h2><p class="text-muted" id="lbl-limelight-subheader">Celebrating exceptional locations & achievements.</p></div>
+  <div class="row g-4" id="limelight-grid">
+    <div class="col-md-6 col-lg-4"><div class="card h-100 nature-card"><div class="position-relative"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" class="limelight-thumb"><span class="news-category-badge">Tourist Spots</span></div><div class="card-body"><h5 class="fw-bold text-success">Vittalagundi Cascade Falls</h5><p class="text-secondary small">Hidden waterfall within ancient rocks, pristine ecosystem.</p><a href="#" class="btn-limelight-popup small text-success fw-bold" data-index="0">Discover more <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card h-100 nature-card"><div class="position-relative"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" class="limelight-thumb"><span class="news-category-badge">Achievements</span></div><div class="card-body"><h5 class="fw-bold text-success">Shri K. Ramachandra Bhat Award</h5><p class="text-secondary small">Lifetime contribution to Ayurvedic botanical documentation.</p></div></div></div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY HUB (V5) ================= -->
+<section id="view-community" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-community-header">Community Hub</h2><p class="text-muted" id="lbl-community-subheader">Cultural heritage & native lifestyles.</p></div>
+  <div class="row"><div class="col-lg-3 mb-4"><div class="nav flex-column nav-pills subtab-navigation" id="community-sub-nav"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#comm1"><i class="fa-solid fa-users-viewfinder me-2"></i>Mooladhara Tribe Legacy</button><button class="nav-link" data-bs-toggle="pill" data-bs-target="#comm2"><i class="fa-solid fa-wheat-awn me-2"></i>Malenadu Farmers Collective</button></div></div><div class="col-lg-9"><div class="tab-content bg-white p-4 rounded-4 shadow-sm border"><div class="tab-pane fade show active" id="comm1"><h4 class="fw-bold text-success">Mooladhara Tribe Heritage</h4><p><strong>Traditional Bamboo Art & Eco-Craft</strong></p><p class="text-secondary">Generation-led knowledge crafting utility equipment using wild bamboo shoots.</p><div class="row g-2 mt-2"><div class="col-md-6"><img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded"></div><div class="col-md-6"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=400&q=80" class="img-fluid rounded"></div></div><small class="text-muted mt-2 d-block"><i class="fa-regular fa-calendar"></i> May 2026</small></div><div class="tab-pane fade" id="comm2"><h4 class="fw-bold text-success">Malenadu Farmers Collective</h4><p><strong>Organic Cardamom & Climate Resilience</strong></p><p class="text-secondary">Addressing changing rainfall patterns, community-led agroecology.</p><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded mt-2"></div></div></div></div>
+</section>
+
+<!-- ================= WELL-WISHERS (V5) ================= -->
+<section id="view-wellwishers" class="app-view-section">
+  <div class="container-fluid px-0 mb-4"><div id="wellwisherCarousel" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" class="w-100" style="height:320px; object-fit:cover;"><div class="carousel-caption d-none d-md-block bg-dark bg-opacity-70 rounded-3 p-3"><h4 class="text-warning">Global Diaspora Alliance</h4><p>Wishing Kabbinale prosperity & heritage growth</p></div></div></div></div></div>
+  <div class="container"><div class="text-center mb-5"><h2 class="fw-bold text-success" id="lbl-wellwishers-header">Our Well-Wishers</h2><p class="text-muted" id="lbl-wellwishers-subheader">Advocates for rural growth frameworks</p></div><div class="sponsor-premium-row" style="background-image:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"><div class="sponsor-row-overlay d-flex align-items-center"><div class="d-flex align-items-center gap-3 text-white"><div class="sponsor-avatar-frame"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"></div><div><h4 class="fw-bold">Dr. Anindita Hegde Lakshmi</h4><p>Medical camps & organic agri advisory</p></div></div></div></div></div>
+</section>
+
+<!-- ================= GALLERY (V5) ================= -->
+<section id="view-gallery" class="app-view-section">
+  <div class="container-fluid px-0 mb-4"><div id="galleryTopCarousel" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80" class="w-100" style="height:380px; object-fit:cover;"></div></div></div></div>
+  <div class="container"><div class="text-center mb-5"><h2 class="fw-bold text-success" id="lbl-gallery-header">Village Photo Gallery</h2><p class="text-muted" id="lbl-gallery-subheader">Pure nature preservation frames</p></div><div class="row g-4" id="gallery-grid-engine"></div></div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="view-contact" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-contact-header">Contact & Support</h2><p class="text-muted" id="lbl-contact-subheader">Reach managing authorities.</p></div>
+  <div class="row g-4"><div class="col-lg-6"><div class="p-4 bg-white rounded-4 shadow-sm"><h4 class="text-success"><i class="fa-solid fa-map-location-dot me-2"></i><span id="lbl-contact-g1-title">General Info</span></h4><p id="lbl-contact-g1-p">For village inquiries: central desk.</p><hr><p><strong id="lbl-contact-email-tag">Email:</strong> contact@kabbinale.com</p><p><strong id="lbl-contact-loc-tag">Location:</strong> <span id="lbl-contact-loc-val">Kabbinale Village, Hebri, Udupi - 576112</span></p></div></div><div class="col-lg-6"><div class="p-4 bg-white rounded-4 shadow-sm"><h4 class="text-success fw-bold" id="c-h-main">Institutional Communications</h4><div class="mt-3"><h6 id="c-t1">Uma Maheshwara (Vittalagundi):</h6><p class="small">+91 94812 34567 | vtt-uma@kabbinale.com</p><h6 id="c-t2">Lakshminarayana (Melumata):</h6><p class="small">+91 94812 76543 | mel-lakshmi@kabbinale.com</p></div></div></div></div>
+</section>
+
+<!-- ================= SPONSORS (Card style V5 + Patron modal) ================= -->
+<section id="view-sponsors" class="app-view-section container">
+  <div class="text-center mb-5"><h2 class="fw-bold text-success display-6" id="lbl-sponsors-header">Sponsors & Digital Seva</h2><p class="text-muted" id="lbl-sponsors-subheader">Grateful to patrons empowering the digital framework.</p></div>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6 col-lg-4"><div class="card p-4 h-100 nature-card text-center border-top border-4 border-warning"><div class="badge bg-warning text-dark mx-auto mb-3 px-3 py-2">Active Sponsor</div><h5 class="fw-bold">Uma Maheshwara Seva Trust</h5><div class="qr-mock-box my-3"><i class="fa-solid fa-qrcode fs-1 text-dark"></i></div><small>Seva Account</small></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-4 h-100 nature-card text-center border-top border-4 border-warning"><div class="badge bg-warning text-dark mx-auto mb-3">Active Sponsor</div><h5 class="fw-bold">Melumata Devotees Forum</h5><div class="qr-mock-box my-3"><i class="fa-solid fa-qrcode fs-1"></i></div><small>Community Infrastructure</small></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-4 h-100 nature-card text-center border-top border-4 border-warning"><div class="badge bg-warning text-dark mx-auto mb-3">Active Sponsor</div><h5 class="fw-bold">Kabbinale Eco-Club Patrons</h5><div class="qr-mock-box my-3"><i class="fa-solid fa-qrcode fs-1"></i></div><small>Ecology Journal Fund</small></div></div>
+  </div>
+  <div class="mt-5 p-4 bg-success text-white rounded-4 text-center"><h4 class="fw-bold">Support Digital Preservation of Kabbinale</h4><button class="btn btn-warning fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#becomePatronModal">Become a Patron</button></div>
+</section>
+
+<!-- Patron Modal (from GMV4) -->
+<div class="modal fade" id="becomePatronModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header bg-success text-white"><h5>Sacred Heritage Patron</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Bank: SBI, A/C: 409823145567, IFSC: SBIN0003412, UPI: kabbinale@sbi | Email: patron-support@kabbinale.com</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+<!-- Modals for limelight / gallery -->
+<div class="modal fade" id="limelightDetailedPopupWindow" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="position-relative"><img id="limelight-popup-large-image" class="w-100" style="height:380px;object-fit:cover;"><button class="btn-close position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2" data-bs-dismiss="modal"></button></div><div class="modal-body"><span id="limelight-popup-category" class="badge bg-success"></span><h4 id="limelight-popup-brief" class="mt-2"></h4><p id="limelight-popup-detailed"></p></div></div></div></div>
+<div class="modal fade" id="photoShowerPopupWindow" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img id="shower-large-image" class="w-100" style="height:400px;object-fit:cover;"><div class="p-3"><span id="shower-category" class="badge bg-success"></span><h4 id="shower-name"></h4><p id="shower-description"></p></div></div></div></div>
+
+</main>
+
+<footer><div class="container"><div class="row"><div class="col-md-5"><h5 class="text-white"><i class="fa-regular fa-map"></i> KABBINALE ECO-PORTAL</h5><p id="foot-desc" class="small">Community-driven non-profit digital gateway preserving cultural & environmental heritage.</p></div><div class="col-md-3"><h5 class="text-white" id="foot-links-title">Quick Nav</h5><ul class="list-unstyled small"><li><a href="#" data-target-view="home">Home</a></li><li><a href="#" data-target-view="about">Temples</a></li></ul></div><div class="col-md-4"><h5 class="text-white" id="foot-loc-title">Jurisdiction</h5><p id="foot-loc-text" class="small">Hebri Taluk, Udupi District, Karnataka</p></div></div><hr><div class="text-center small text-white-50">© 2026 Kabbinale Village Community Portal</div></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ---------- FULL DICTIONARY (EN + KN) ----------
+  const dict = {
+    English: { ticker:"🌿 Welcome to Kabbinale Eco-Portal! Experience pure untouched nature...", subtext:"Vibrant Nature Eco-Portal", mHome:"Home", mAbout:"About Temples", mEvents:"Events", mNews:"News", mLimelight:"Limelight", mCommunity:"Community Hub", mWellwishers:"Well-Wishers", mGallery:"Gallery", mContact:"Contact", mSponsors:"Sponsors", statHouses:"Total Residential Houses", statPopulation:"Active Residents", statNature:"Ayurvedic Flora", welcomeTitle:"The Natural Splendor of Kabbinale", welcomeP1:"Kabbinale is a unique settlement wrapped within wild mountain ranges and expansive evergreen woods...", welcomeP2:"The ecosystem serves as a vast natural repository of organic forest fruits and potent medicinal herbs...", aboutHeader:"Divine Temples & Daivasthanas", aboutSubheader:"Explore historic spiritual entities.", eventsHeader:"Community Festive Gatherings", eventsSubheader:"Festivals across temples.", newsHeader:"Kabbinale Journal", newsSubheader:"Latest village updates.", limelightHeader:"Village Limelight", limelightSubheader:"Exceptional locations & achievements.", communityHeader:"Community Hub", communitySubheader:"Cultural heritage & lifestyles.", wellwishersHeader:"Our Well-Wishers", wellwishersSubheader:"Advocates for rural growth.", galleryHeader:"Village Photo Gallery", gallerySubheader:"Nature preservation frames.", contactHeader:"Contact & Support", contactSubheader:"Reach authorities.", contactG1Title:"General Info", contactG1P:"Central desk for inquiries.", contactEmailTag:"Email:", contactLocTag:"Location:", contactLocVal:"Kabbinale Village, Hebri, Udupi - 576112", sponsorsHeader:"Sponsors & Digital Seva", sponsorsSubheader:"Grateful to patrons.", footDesc:"Community-driven non-profit digital gateway preserving cultural & environmental heritage.", footLinksTitle:"Quick Nav", footLocTitle:"Jurisdiction", footLocText:"Hebri Taluk, Udupi District, Karnataka" },
+    Kannada: { ticker:"🌿 ಕಬ್ಬಿನಾಲೆ ಪರಿಸರ-ಪೋರ್ಟಲ್‌ಗೆ ಸುಸ್ವಾಗತ! ಶುದ್ಧ ಪ್ರಕೃತಿ, ನಿತ್ಯ ಹರಿದ್ವರ್ಣ ಕಾಡುಗಳು ಮತ್ತು ದೈವಿಕ ಕ್ಷೇತ್ರಗಳು.", subtext:"ಜೀವಂತ ಪ್ರಕೃತಿ ಜಾಲತಾಣ", mHome:"ಮುಖಪುಟ", mAbout:"ಕ್ಷೇತ್ರಗಳ ಮಾಹಿತಿ", mEvents:"ಸಂಭ್ರಮಗಳು", mNews:"ಸುದ್ದಿಗಳು", mLimelight:"ವೈಶಿಷ್ಟ್ಯ", mCommunity:"ಸಮುದಾಯ ಕೇಂದ್ರ", mWellwishers:"ಶುಭಾಶಯಕರು", mGallery:"ಗ್ಯಾಲರಿ", mContact:"ಸಂಪರ್ಕ", mSponsors:"ದಾನಿಗಳು", statHouses:"ಒಟ್ಟು ವಸತಿಗೃಹಗಳು", statPopulation:"ಸಕ್ರಿಯ ನಿವಾಸಿಗಳು", statNature:"ಆಯುರ್ವೇದ ಸಸ್ಯವರ್ಗ", welcomeTitle:"ಕಬ್ಬಿನಾಲೆಯ ನೈಸರ್ಗಿಕ ವೈಭವ", welcomeP1:"ಕಬ್ಬಿನಾಲೆಯು ಕಾಡು ಗುಡ್ಡಗಳ ನಡುವಿನ ವಿಶಿಷ್ಟ ವಸಾಹತು.", welcomeP2:"ಪರಿಸರ ವ್ಯವಸ್ಥೆಯು ಸಾವಯವ ಕಾಡಿನ ಹಣ್ಣುಗಳು ಮತ್ತು ಔಷಧೀಯ ಗಿಡಮೂಲಿಕೆಗಳ ಭಂಡಾರ.", aboutHeader:"ದೈವಿಕ ದೇವಾಲಯಗಳು ಮತ್ತು ದೈವಸ್ಥಾನಗಳು", aboutSubheader:"ಗ್ರಾಮದ ಆಧ್ಯಾತ್ಮಿಕ ಕ್ಷೇತ್ರಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.", eventsHeader:"ಸಮುದಾಯ ಹಬ್ಬದ ಕೂಟಗಳು", eventsSubheader:"ಹಬ್ಬಗಳ ಮಾಹಿತಿ.", newsHeader:"ಕಬ್ಬಿನಾಲೆ ಪತ್ರಿಕೆ", newsSubheader:"ಗ್ರಾಮದ ಇತ್ತೀಚಿನ ಸುದ್ದಿಗಳು.", limelightHeader:"ಗ್ರಾಮದ ವೈಶಿಷ್ಟ್ಯ", limelightSubheader:"ಪ್ರವಾಸಿ ತಾಣಗಳು ಮತ್ತು ಸಾಧನೆಗಳು.", communityHeader:"ಸಮುದಾಯ ಕೇಂದ್ರ", communitySubheader:"ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆ.", wellwishersHeader:"ನಮ್ಮ ಶುಭಾಶಯಕರು", wellwishersSubheader:"ಗ್ರಾಮೀಣ ಅಭಿವೃದ್ಧಿ ಸಹಯೋಗಿಗಳು.", galleryHeader:"ಗ್ರಾಮದ ಫೋಟೋ ಗ್ಯಾಲರಿ", gallerySubheader:"ಪ್ರಕೃತಿ ಸಂರಕ್ಷಣೆ.", contactHeader:"ಸಂಪರ್ಕ ಮತ್ತು ಬೆಂಬಲ", contactSubheader:"ಅಧಿಕಾರಿಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.", contactG1Title:"ಸಾಮಾನ್ಯ ಮಾಹಿತಿ", contactG1P:"ಗ್ರಾಮದ ಕೇಂದ್ರ ಡೆಸ್ಕ್.", contactEmailTag:"ಇಮೇಲ್:", contactLocTag:"ಸ್ಥಳ:", contactLocVal:"ಕಬ್ಬಿನಾಲೆ ಗ್ರಾಮ, ಹೆಬ್ರಿ ತಾಲೂಕು, ಉಡುಪಿ - 576112", sponsorsHeader:"ಪೋಷಕರು ಮತ್ತು ದಾನಿಗಳು", sponsorsSubheader:"ಡಿಜಿಟಲ್ ಸೇವಾ ಪೋಷಕರಿಗೆ ಧನ್ಯವಾದಗಳು.", footDesc:"ಸಾಂಸ್ಕೃತಿಕ ಮತ್ತು ಪರಿಸರ ಪರಂಪರೆಯನ್ನು ಸಂರಕ್ಷಿಸುವ ಲಾಭರಹಿತ ಡಿಜಿಟಲ್ ಗೇಟ್‌ವೇ.", footLinksTitle:"ತ್ವರಿತ ನ್ಯಾವಿಗೇಷನ್", footLocTitle:"ಆಡಳಿತಾತ್ಮಕ ವ್ಯಾಪ್ತಿ", footLocText:"ಹೆಬ್ರಿ ತಾಲೂಕು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ" }
+  };
+  
+  // News Database
+  const newsDatabase = [{ id:"n1", category:"Heritage", date:"May 24, 2026", title:"Restoration Blueprint for Uma Maheshwara", summary:"Eco-stone paving design to ease senior access.", detail:"Sustainable development approved using native granite."},{ id:"n2", category:"Ecology", date:"May 18, 2026", title:"Rare Orchids Cataloged", summary:"Twelve endemic varieties recorded.", detail:"Microclimate remains unpolluted, humidity for epiphytes."},{ id:"n3", category:"Community", date:"May 10, 2026", title:"Educational Book Distribution", summary:"Textbooks & organic seed kits for students.", detail:"Youth green monitoring award ecosystem."}];
+  const imagesList = ["https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80","https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80","https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80"];
+  function injectNews(lang){ const deck=document.getElementById("news-cards-injector-deck"); if(!deck)return; deck.innerHTML=""; newsDatabase.forEach((item,i)=>{ let btnText= lang==="Kannada"?"ಪೂರ್ಣ ವಿವರ":"Read More"; deck.innerHTML+=`<div class="col-md-4"><div class="card h-100 nature-card"><div class="news-thumb-frame"><span class="news-category-badge">${item.category}</span><img src="${imagesList[i%3]}"></div><div class="card-body"><small class="text-success">${item.date}</small><h5 class="fw-bold">${item.title}</h5><p class="text-secondary small">${item.summary}</p><button class="btn btn-outline-success btn-sm w-100" onclick="showNewsModal('${item.id}','${imagesList[i%3]}')">${btnText}</button></div></div></div>`; }); }
+  window.showNewsModal=(id,img)=>{ const item=newsDatabase.find(n=>n.id===id); if(item){ document.getElementById("popup-large-image").src=img; document.getElementById("popup-category-label").innerText=item.category; document.getElementById("popup-publish-date").innerHTML=`<i class="fa-regular fa-calendar"></i> ${item.date}`; document.getElementById("popup-brief-desc").innerText=item.title; document.getElementById("popup-detailed-desc").innerText=item.detail; new bootstrap.Modal(document.getElementById('newsReaderPopupWindow')).show(); }};
+  // gallery injection
+  const galleryItems=[{img:"https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80",name:"Misty Valley",cat:"Ecology",desc:"Cloud layers over evergreen trees."},{img:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400&q=80",name:"Deep Canopy",cat:"Forest",desc:"Ancient tree lines."},{img:"https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=400&q=80",name:"Herbal Stream",cat:"Ayurveda",desc:"Medicinal plants near water source."}];
+  function renderGallery(){ const grid=document.getElementById("gallery-grid-engine"); if(!grid)return; grid.innerHTML=""; galleryItems.forEach(item=>{ grid.innerHTML+=`<div class="col-md-6 col-lg-4"><div class="card h-100 nature-card gallery-clickable-node" data-img="${item.img}" data-name="${item.name}" data-cat="${item.cat}" data-desc="${item.desc}"><img src="${item.img}" class="limelight-thumb"><div class="card-body"><span class="badge bg-success">${item.cat}</span><h5 class="mt-2">${item.name}</h5></div></div></div>`; }); document.querySelectorAll(".gallery-clickable-node").forEach(el=>{ el.addEventListener("click",()=>{ document.getElementById("shower-large-image").src=el.dataset.img; document.getElementById("shower-category").innerText=el.dataset.cat; document.getElementById("shower-name").innerText=el.dataset.name; document.getElementById("shower-description").innerText=el.dataset.desc; new bootstrap.Modal(document.getElementById('photoShowerPopupWindow')).show(); }); }); }
+  const limelightData=[{ title:"Vittalagundi Cascade Falls", category:"Tourist Spots", belongs:"Nature Reserve", date:"2026-05-20", briefDesc:"Hidden waterfall amidst pristine rocks", detailedDesc:"Surrounded by rare orchids and ancient roots, a true ecological treasure.", largeImg:"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80"}];
+  document.querySelectorAll(".btn-limelight-popup").forEach(btn=>{ btn.addEventListener("click",(e)=>{ e.preventDefault(); const data=limelightData[0]; document.getElementById("limelight-popup-large-image").src=data.largeImg; document.getElementById("limelight-popup-category").innerText=data.category; document.getElementById("limelight-popup-brief").innerHTML=data.briefDesc; document.getElementById("limelight-popup-detailed").innerText=data.detailedDesc; new bootstrap.Modal(document.getElementById('limelightDetailedPopupWindow')).show(); }); });
+  function updateLanguage(lang){ const d=dict[lang]; Object.keys(d).forEach(id=>{ let el=document.getElementById(id); if(el) el.innerText=d[id]; else{ if(id==="contactEmailTag"){ let el2=document.getElementById("lbl-contact-email-tag"); if(el2) el2.innerHTML=`<i class="fa-solid fa-envelope text-success me-2"></i> ${d[id]}`; } if(id==="contactLocTag") document.getElementById("lbl-contact-loc-tag")&&(document.getElementById("lbl-contact-loc-tag").innerHTML=`<i class="fa-solid fa-location-dot text-success me-2"></i> ${d[id]}`); } }); document.getElementById("brand-subtext")&&(document.getElementById("brand-subtext").innerText=d.subtext); document.getElementById("global-ticker-text").innerText=d.ticker; injectNews(lang); }
+  function switchView(viewId){ document.querySelectorAll(".app-view-section").forEach(sec=>sec.classList.remove("view-active")); let target=document.getElementById(`view-${viewId}`); if(target) target.classList.add("view-active"); document.querySelectorAll("#primary-menu-tabs .nav-link").forEach(l=>l.classList.remove("active")); let activeLink=document.querySelector(`#primary-menu-tabs [data-target-view="${viewId}"]`); if(activeLink) activeLink.classList.add("active"); window.scrollTo({top:0,behavior:"smooth"}); }
+  document.querySelectorAll("[data-target-view]").forEach(link=>{ link.addEventListener("click",(e)=>{ e.preventDefault(); let dest=link.getAttribute("data-target-view"); switchView(dest); }); });
+  document.getElementById("localization-trigger-node").addEventListener("change",(e)=>updateLanguage(e.target.value));
+  // filter events
+  document.querySelectorAll(".filter-node-action").forEach(btn=>{ btn.addEventListener("click",()=>{ document.querySelectorAll(".filter-node-action").forEach(b=>{ b.classList.remove("btn-success","active-filter"); b.classList.add("btn-outline-success");}); btn.classList.remove("btn-outline-success"); btn.classList.add("btn-success","active-filter"); let scope=btn.getAttribute("data-filter-scope"); document.querySelectorAll(".targeted-event-card").forEach(card=>{ if(scope==="all"||card.getAttribute("data-origin")===scope) card.style.display="block"; else card.style.display="none"; }); }); });
+  // carousel panel update
+  document.getElementById("homeCarouselIndicators")?.addEventListener("slide.bs.carousel",(e)=>{ const captionsEn=["Kabbinale Landscape View","Forest Deep Canopy","Therapeutic Plant Environments"]; const captionsKn=["ಕಬ್ಬಿನಾಲೆ ಪ್ರಕೃತಿ ನೋಟ","ದಟ್ಟ ಕಾಡಿನ ಮೇಲಾವರಣ","ಚಿಕಿತ್ಸಕ ಸಸ್ಯ ಪರಿಸರ"]; let lang=document.getElementById("localization-trigger-node").value; let arr=lang==="Kannada"?captionsKn:captionsEn; document.getElementById("slider-panel-title").innerText=arr[e.to]; document.getElementById("slider-panel-text").innerText=lang==="Kannada"?(e.to===0?"ಗ್ರಾಮ ಸುತ್ತಮುತ್ತಲ ಕಣಿವೆಗಳ ಅದ್ಭುತ ನೋಟ":e.to===1?"ನೈಸರ್ಗಿಕ ಜೈವಿಕ ವ್ಯವಸ್ಥೆಗಳನ್ನು ರಕ್ಷಿಸುವ ಅಗಾಧ ಕಾಡುಗಳು":"ಶುದ್ಧ ಆಯುರ್ವೇದ ಮೂಲಿಕೆ ಸಂಗ್ರಹಗಳಿಗೆ ಪ್ರಾಕೃತಿಕ ತೊರೆಗಳು"):(e.to===0?"A mesmerizing view of wild evergreen valleys surrounding the village.":e.to===1?"Immense woods guarding biological systems and medicinal flora.":"Pristine streams providing hydration to traditional Ayurvedic herb collections."); });
+  renderGallery(); injectNews("English"); updateLanguage("English");
+</script>
+<div class="modal fade" id="newsReaderPopupWindow" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="position-relative"><img id="popup-large-image" class="w-100" style="height:350px;object-fit:cover;"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 bg-white rounded-circle" data-bs-dismiss="modal"></button></div><div class="modal-body"><span id="popup-category-label" class="badge bg-success"></span> <small id="popup-publish-date"></small><h4 id="popup-brief-desc" class="mt-2"></h4><p id="popup-detailed-desc"></p></div></div></div></div>
+</body>
+</html>
